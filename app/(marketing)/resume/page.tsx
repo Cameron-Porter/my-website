@@ -8,6 +8,41 @@ export const metadata: Metadata = {
   description: 'Resume for Cameron Porter — backend developer, Coast Guard veteran, and TypeScript/Go builder.',
 };
 
+type ExperienceItem = {
+  role: string;
+  company: string;
+  dates: string;
+  bullets: string[];
+};
+
+function renderExperienceItems(items: ExperienceItem[]) {
+  return items.map((job) => (
+    <div key={job.company} className='mb-5'>
+      <div className='mb-2 flex flex-col gap-1'>
+        <h3 className='font-heading text-lg font-bold text-primary-text'>{job.role}</h3>
+        <p className='text-sm text-muted-text'>{job.company} · {job.dates}</p>
+      </div>
+      <ul className='ml-5 space-y-2'>
+        {job.bullets.map((bullet, idx) => (
+          <li key={idx} className='flex gap-3 text-sm leading-6 text-muted-text'>
+            <span className='mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-accent-jade shadow-[0_0_12px_rgba(20,184,166,0.35)]' />
+            <span>{bullet}</span>
+          </li>
+        ))}
+      </ul>
+    </div>
+  ));
+}
+
+function renderTextItems(items: string[]) {
+  return items.map((item, idx) => (
+    <li key={idx} className='flex gap-3 text-sm leading-6 text-muted-text'>
+      <span className='mt-2 h-2 w-2 shrink-0 rounded-full bg-accent-jade shadow-[0_0_16px_rgba(20,184,166,0.45)]' />
+      <span>{item}</span>
+    </li>
+  ));
+}
+
 export default function ResumePage() {
   return (
     <section className='mx-auto max-w-[980px] px-5 py-16 sm:px-6 md:py-24'>
@@ -38,12 +73,34 @@ export default function ResumePage() {
           <section key={section.id} className='rounded-[1.75rem] border border-white/10 bg-secondary-surface/60 p-6' aria-labelledby={`${section.id}-heading`}>
             <h2 id={`${section.id}-heading`} className='font-heading text-2xl font-bold text-primary-text'>{section.title}</h2>
             <ul className='mt-5 space-y-3'>
-              {section.items.map((item) => (
-                <li key={item} className='flex gap-3 text-sm leading-6 text-muted-text'>
-                  <span className='mt-2 h-2 w-2 shrink-0 rounded-full bg-accent-jade shadow-[0_0_16px_rgba(20,184,166,0.45)]' />
-                  <span>{item}</span>
-                </li>
-              ))}
+              {section.items.map((item, idx) => {
+                // Check if item is an ExperienceItem object or a string
+                if (item && typeof item === 'object' && 'role' in item && 'company' in item) {
+                  return (
+                    <div key={idx} className='mb-5 ml-3 rounded-lg bg-white/[0.03] p-4'>
+                      <div className='mb-2 flex flex-col gap-1'>
+                        <h3 className='font-heading text-lg font-bold text-primary-text'>{item.role}</h3>
+                        <p className='text-sm text-muted-text'>{item.company} · {item.dates}</p>
+                      </div>
+                      <ul className='ml-5 space-y-2'>
+                        {(item as ExperienceItem).bullets.map((bullet, bulletIdx) => (
+                          <li key={bulletIdx} className='flex gap-3 text-sm leading-6 text-muted-text'>
+                            <span className='mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-accent-jade shadow-[0_0_12px_rgba(20,184,166,0.35)]' />
+                            <span>{bullet}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  );
+                }
+                // String item (non-experience sections)
+                return (
+                  <li key={idx} className='flex gap-3 text-sm leading-6 text-muted-text'>
+                    <span className='mt-2 h-2 w-2 shrink-0 rounded-full bg-accent-jade shadow-[0_0_16px_rgba(20,184,166,0.45)]' />
+                    <span>{item}</span>
+                  </li>
+                );
+              })}
             </ul>
           </section>
         ))}

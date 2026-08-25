@@ -13,7 +13,14 @@ export type PersonalProject = {
 export type ResumeSection = {
   id: 'summary' | 'experience' | 'service' | 'education' | 'skills' | 'projects';
   title: string;
-  items: string[];
+  items: string[] | ExperienceItem[]; // Allow nested experience items
+};
+
+type ExperienceItem = {
+  role: string;
+  company: string;
+  dates: string;
+  bullets: string[];
 };
 
 export const primaryNavLinks: NavLink[] = [
@@ -93,12 +100,33 @@ export const resumeSections: ResumeSection[] = [
     id: 'experience',
     title: 'Experience',
     items: [
-      'Software Developer II, Compassion International (04/2023 – Present): lead development and optimization of enterprise payment processing systems integrating NetSuite ERP and AWS cloud infrastructure, supporting millions of financial transactions annually.',
-      'Designed automated payment lifecycle workflows, event-driven AWS Lambda/SNS/SQS integrations, REST APIs, Snowflake/ERP reporting flows, and idempotent processing across 6M+ records.',
-      'Improved system processing performance by 3400%, eliminated duplicate financial transactions across millions of records, and reduced manual workload through payment processing automation.',
-      'Software Engineer, Merkle, Inc (03/2022 – 04/2023): developed backend systems and Node.js automation tools for large-scale client promotions and digital campaigns.',
-      'Designed automation workflows that reduced operational costs by approximately $2 million annually, mitigated bot traffic vulnerabilities, and improved team documentation/processes.',
-      'Software Engineering Mentor, VetsWhoCode (03/2021 – 03/2025): mentored transitioning veterans through pair programming, technical guidance, code review, architecture discussions, and React/Next.js web application support.',
+      {
+        role: 'Software Developer II',
+        company: 'Compassion International',
+        dates: '04/2023 – Present',
+        bullets: [
+          'Led development and optimization of enterprise payment processing systems integrating NetSuite ERP and AWS cloud infrastructure, supporting millions of financial transactions annually.',
+          'Designed automated payment lifecycle workflows, event-driven AWS Lambda/SNS/SQS integrations, REST APIs, Snowflake/ERP reporting flows, and idempotent processing across 6M+ records.',
+          'Improved system processing performance by 3400%, eliminated duplicate financial transactions across millions of records, and reduced manual workload through payment processing automation.',
+        ],
+      },
+      {
+        role: 'Software Engineer',
+        company: 'Merkle, Inc',
+        dates: '03/2022 – 04/2023',
+        bullets: [
+          'Developed backend systems and Node.js automation tools for large-scale client promotions and digital campaigns.',
+          'Designed automation workflows that reduced operational costs by approximately $2 million annually, mitigated bot traffic vulnerabilities, and improved team documentation/processes.',
+        ],
+      },
+      {
+        role: 'Software Engineering Mentor',
+        company: 'VetsWhoCode',
+        dates: '03/2021 – 03/2025',
+        bullets: [
+          'Mentored transitioning veterans through pair programming, technical guidance, code review, architecture discussions, and React/Next.js web application support.',
+        ],
+      },
     ],
   },
   {

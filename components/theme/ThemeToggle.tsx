@@ -47,12 +47,12 @@ export default function ThemeToggle() {
     >
       <span
         aria-hidden='true'
-        className='lantern-glow pointer-events-none absolute inset-0 rounded-full bg-[radial-gradient(circle,rgba(232,184,75,0.55),transparent_70%)] opacity-0 blur-md transition-opacity duration-300 dark:opacity-100'
+        className='lantern-glow lantern-breathe pointer-events-none absolute inset-0 rounded-full bg-[radial-gradient(circle_at_50%_50%,rgba(232,184,75,0.15),rgba(232,184,75,0.45)_50%,rgba(232,184,75,0.15)_100%)] opacity-0 blur-lg transition-opacity duration-500 dark:opacity-100'
       />
       <Lamp
         aria-hidden='true'
         size={22}
-        className='relative text-muted-text/60 transition-colors duration-300 dark:text-accent-jade dark:drop-shadow-[0_0_8px_rgba(232,184,75,0.8)]'
+        className='relative z-10 text-muted-text/60 transition-colors duration-300 dark:text-accent-jade dark:drop-shadow-[0_0_12px_rgba(232,184,75,0.9)]'
       />
     </button>
   );

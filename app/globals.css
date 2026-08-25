@@ -168,10 +168,10 @@
 
 @layer base {
   * {
-    @apply border-border outline-ring/50;
+    @apply border-outline-ring/50;
   }
   body {
-    @apply bg-background text-foreground;
+    @apply bg-foreground text-foreground;
     overflow-x: hidden;
   }
   html {
@@ -191,10 +191,8 @@
     scroll-behavior: auto !important;
   }
 }
-/**
- * Tactile Rebellion - Layered depth and organic texture
- * Adds noise, uneven shadows, and micro-animations for "made" feel
- */
+
+/* Tactile Rebellion - Layered depth and organic texture */
 
 /* Organic noise texture - subtle grain overlay, tuned per theme */
 body,
@@ -265,6 +263,21 @@ html.dark {
 
 .lantern-glow {
   animation: lantern-flicker 3.2s ease-in-out infinite;
+}
+
+.lantern-breathe {
+  animation: lantern-breathe 4s ease-in-out infinite;
+}
+
+@keyframes lantern-breathe {
+  0%, 100% {
+    opacity: 0.3;
+    filter: blur(1rem);
+  }
+  50% {
+    opacity: 0.6;
+    filter: blur(1.5rem);
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {

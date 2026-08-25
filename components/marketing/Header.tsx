@@ -4,6 +4,7 @@ import { useState, useCallback } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { Menu, Sparkles } from 'lucide-react';
+import { ToriiGate } from '@/components/ui/ToriiGate';
 import { navLinks, siteConfig } from '@/lib/config/site';
 import { personalSite } from '@/lib/config/personal-site';
 import { cn } from '@/lib/utils';
@@ -30,8 +31,8 @@ export default function Header({ className }: HeaderProps) {
           aria-label='Main navigation'
         >
           <Link href='/' className='group flex items-center gap-3 transition-opacity duration-200 hover:opacity-90'>
-            <span className='grid h-9 w-9 place-items-center rounded-2xl border border-accent-gold/25 bg-accent-jade/10 text-accent-jade shadow-[0_0_32px_rgba(20,184,166,0.18)]'>
-              <Sparkles size={18} aria-hidden='true' />
+            <span className='grid h-9 w-9 place-items-center rounded-2xl border border-accent-gold/25 bg-accent-jade/10 text-accent-gold shadow-[0_0_32px_rgba(232,184,75,0.18)]'>
+              <ToriiGate size={18} className='text-accent-gold' />
             </span>
             <span className='grid leading-tight'>
               <span className='font-heading text-sm font-extrabold uppercase tracking-[0.18em] text-primary-text sm:text-base'>
