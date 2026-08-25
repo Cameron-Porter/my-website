@@ -95,7 +95,7 @@ export default function HeroSection({ className }: HeroSectionProps) {
           <div className='flex-1'>
             {/* Brand badge - offset and layered */}
             <motion.div
-              className='mb-8 inline-flex items-center gap-2 rounded-full border border-accent-gold/20 bg-accent-gold/5 px-4 py-1.5 text-xs font-bold uppercase tracking-wider text-accent-gold backdrop-blur-sm'
+              className='mb-8 inline-flex items-center gap-2 rounded-full border border-accent-gold/20 bg-accent-jade/5 px-4 py-1.5 text-xs font-bold uppercase tracking-wider text-accent-jade backdrop-blur-sm'
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ delay: 0.1, duration: 0.5 }}
@@ -137,7 +137,7 @@ export default function HeroSection({ className }: HeroSectionProps) {
                 href={APP_URL}
                 target='_blank'
                 rel='noopener noreferrer'
-                className='inline-flex h-14 items-center justify-center gap-2 rounded-full bg-accent-gold px-8 text-base font-bold text-primary-bg shadow-[0_18px_55px_rgba(20,184,166,0.28)] transition-all duration-300 ease-out hover:-translate-y-0.5 hover:bg-accent-gold/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-gold/50 focus-visible:ring-offset-2 focus-visible:ring-offset-primary-bg'
+                className='inline-flex h-14 items-center justify-center gap-2 rounded-full bg-accent-jade px-8 text-base font-bold text-primary-bg shadow-[0_18px_55px_rgba(20,184,166,0.28)] transition-all duration-300 ease-out hover:-translate-y-0.5 hover:bg-accent-jade/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-gold/50 focus-visible:ring-offset-2 focus-visible:ring-offset-primary-bg'
               >
                 <span aria-hidden='true'>↗</span>
                 Open G.R.I.T.
@@ -210,7 +210,7 @@ export default function HeroSection({ className }: HeroSectionProps) {
                     animate={{ opacity: 1, scale: 1 }}
                     transition={{ delay: 0.85 + i * 0.05, duration: 0.3 }}
                   >
-                    <span className='text-accent-gold'>{icon}</span>
+                    <span className='text-accent-jade'>{icon}</span>
                     <span className='text-xs font-medium text-primary-text'>{label}</span>
                   </motion.div>
                 ))}
@@ -395,7 +395,7 @@ function FloatingElements() {
           ease: 'easeInOut',
         }}
       >
-        <div className='h-8 w-8 rounded-full bg-accent-gold/20' />
+        <div className='h-8 w-8 rounded-full bg-accent-jade/20' />
       </motion.div>
 
       <motion.div
@@ -411,7 +411,7 @@ function FloatingElements() {
           ease: 'easeInOut',
         }}
       >
-        <div className='h-8 w-8 rounded-full bg-accent-gold/10' />
+        <div className='h-8 w-8 rounded-full bg-accent-jade/10' />
       </motion.div>
     </div>
   );

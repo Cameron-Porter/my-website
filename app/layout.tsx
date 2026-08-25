@@ -1,6 +1,9 @@
 import type { Metadata } from 'next';
+import Script from 'next/script';
 import { inter, sora, geistSans, geistMono } from './fonts';
 import { personalSite, siteMetadata } from '@/lib/config/personal-site';
+import { themeInitScript } from '@/lib/theme/theme-script';
+import ThemeToggle from '@/components/theme/ThemeToggle';
 import './globals.css';
 
 export const metadata: Metadata = {
@@ -35,9 +38,16 @@ export default function RootLayout({
   return (
     <html
       lang='en'
-      className={`${inter.variable} ${sora.variable} ${geistSans.variable} ${geistMono.variable} dark h-full antialiased`}
+      suppressHydrationWarning
+      className={`${inter.variable} ${sora.variable} ${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
-      <body className='min-h-full flex flex-col'>{children}</body>
+      <body className='min-h-full flex flex-col'>
+        <Script id='theme-init' strategy='beforeInteractive'>
+          {themeInitScript}
+        </Script>
+        {children}
+        <ThemeToggle />
+      </body>
     </html>
   );
 }

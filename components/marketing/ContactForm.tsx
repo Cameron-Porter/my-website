@@ -41,10 +41,10 @@ export default function ContactForm() {
   if (status === 'success') {
     return (
       <div className='mt-12 text-center'>
-        <div className='mx-auto mb-8 inline-flex items-center justify-center gap-3 rounded-full bg-accent-gold/10 py-4 pl-7 pr-8'>
+        <div className='mx-auto mb-8 inline-flex items-center justify-center gap-3 rounded-full bg-accent-jade/10 py-4 pl-7 pr-8'>
           <span className='flex h-6 w-6 shrink-0 items-center justify-center'>
             <svg
-              className='h-5 w-5 text-accent-gold'
+              className='h-5 w-5 text-accent-jade'
               fill='none'
               viewBox='0 0 24 24'
               stroke='currentColor'
@@ -137,7 +137,7 @@ export default function ContactForm() {
       <button
         type='submit'
         disabled={status === 'submitting'}
-        className='w-full h-12 rounded-lg bg-accent-gold text-sm font-bold text-primary-bg transition-all duration-200 hover:bg-accent-gold/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-gold/50 focus-visible:ring-offset-2 focus-visible:ring-offset-primary-bg disabled:cursor-not-allowed disabled:opacity-50'
+        className='w-full h-12 rounded-lg bg-accent-jade text-sm font-bold text-primary-bg transition-all duration-200 hover:bg-accent-jade/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-gold/50 focus-visible:ring-offset-2 focus-visible:ring-offset-primary-bg disabled:cursor-not-allowed disabled:opacity-50'
       >
         {status === 'submitting' ? 'Sending...' : 'Send Message'}
       </button>
@@ -146,7 +146,7 @@ export default function ContactForm() {
         Or email us directly at{' '}
         <a
           href='mailto:info@cameron-porter.com'
-          className='text-muted-text hover:text-accent-gold transition-colors'
+          className='text-muted-text hover:text-accent-jade transition-colors'
         >
           info@cameron-porter.com
         </a>
@@ -169,7 +169,7 @@ function Field({
       <label className='mb-2.5 block text-xs font-semibold uppercase tracking-wider text-muted-text'>
         {label}
         {required && (
-          <span className='ml-1 text-accent-gold' aria-hidden='true'>
+          <span className='ml-1 text-accent-jade' aria-hidden='true'>
             *
           </span>
         )}

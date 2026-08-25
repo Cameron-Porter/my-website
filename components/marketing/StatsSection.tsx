@@ -29,7 +29,7 @@ export default function StatsSection() {
 function StatCard({ value, label }: { value: string; label: string }) {
   return (
     <div className='rounded-2xl border border-white/8 bg-white/5 p-8 backdrop-blur-sm'>
-      <div className='text-3xl font-extrabold text-accent-gold md:text-4xl'>
+      <div className='text-3xl font-extrabold text-accent-jade md:text-4xl'>
         {value}
       </div>
       <div className='mt-2 text-sm font-semibold uppercase tracking-wider text-muted-text'>

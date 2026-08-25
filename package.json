@@ -1,5 +1,5 @@
 {
-  "name": "porter-performance-app",
+  "name": "my-website",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -42,5 +42,10 @@
     "tailwindcss": "^4",
     "typescript": "^5",
     "vitest": "^3.2.4"
+  },
+  "allowScripts": {
+    "esbuild": true,
+    "msw": true,
+    "unrs-resolver": true
   }
 }

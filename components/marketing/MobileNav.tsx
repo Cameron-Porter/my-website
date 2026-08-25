@@ -76,7 +76,7 @@ export default function MobileNav({ isOpen, onClose }: MobileNavProps) {
                       onClick={onClose}
                       className='flex h-12 items-center rounded-2xl px-4 text-base font-medium transition-colors'
                       style={{
-                        color: isActive ? colors.accentGold : colors.primaryText,
+                        color: isActive ? colors.accentTeal : colors.primaryText,
                         backgroundColor: isActive ? 'rgba(20, 184, 166, 0.1)' : 'transparent',
                         minHeight: '44px',
                         minWidth: '44px',
@@ -101,7 +101,7 @@ export default function MobileNav({ isOpen, onClose }: MobileNavProps) {
               <Link
                 href={personalSite.links.resume}
                 onClick={onClose}
-                className='flex h-11 w-full items-center justify-center rounded-full bg-accent-gold text-sm font-semibold text-primary-bg transition-all duration-200 hover:opacity-90'
+                className='flex h-11 w-full items-center justify-center rounded-full bg-accent-jade text-sm font-semibold text-primary-bg transition-all duration-200 hover:opacity-90'
               >
                 Resume
               </Link>
