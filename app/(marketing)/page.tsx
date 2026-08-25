@@ -114,7 +114,7 @@ export default function HomePage() {
                 Array.isArray(firstItem.bullets) &&
                 firstItem.bullets.length > 0
               ) {
-                previewText = firstItem.bullets[0];
+                previewText = firstItem.bullets[0] ?? '';
               }
 
               return (
