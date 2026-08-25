@@ -1,41 +1,34 @@
-# porter-performance-app
+# Cameron Porter
 
-Marketing website for [G.R.I.T.](https://app.cameron-porter.com) — a hypertrophy training app by Porter Programming.
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Cameron%20Porter-blue)](https://www.linkedin.com/in/cameron-porter-b59387197/)
 
-## Pages
+Welcome to my personal website.
 
-- `/` — landing page
-- `/features` — feature overview
-- `/pricing` — pricing and app access details
-- `/methodology` — training methodology
-- `/research` — research backing
-- `/about` — about
-- `/contact` — contact form
-- `/privacy` — privacy policy
-- `/terms` — terms of service
+## About
 
-## Environment Variables
+I'm a software developer passionate about building clean, efficient applications.
 
-```env
-NEXT_PUBLIC_APP_URL=https://app.cameron-porter.com
-SMTP_HOST=smtp-relay.brevo.com
-SMTP_PORT=587
-SMTP_USER=        # your Brevo login email
-SMTP_PASS=        # your Brevo SMTP key
-SMTP_TO=info@cameron-porter.com
-```
+## Skills
 
-## Local Development
+- TypeScript
+- JavaScript
+- Python
+- Go
+- Next.js
+- React
 
-```bash
-npm install
-npm run dev
-```
+## Projects
 
-## Deploy
+- [G.R.I.T.](https://app.cameron-porter.com) - Hypertrophy training app
 
-Deployed on Vercel. Set the environment variables above in project settings, then push to main.
+## Resume
 
+[Download Resume](Resume,%202026.docx)
 
-## 🔗 Links
-- [LinkedIn Profile](https://www.linkedin.com/in/cameron-porter-b59387197/)
+## Contact
+
+Feel free to reach out via LinkedIn or email at `crporter171@gmail.com`.
+
+---
+
+*Built with Next.js and deployed on Vercel.*
