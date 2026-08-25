@@ -269,14 +269,14 @@ function FloatingElements() {
           height: 580,
         }}
         animate={{
-          y: parallaxY,
-          x: parallaxX,
-          scale,
+          y: [0, -30, 0],
+          x: [0, 15, 0],
+          scale: [1, 1.02, 1],
         }}
         transition={{
-          type: 'spring',
-          stiffness: 80,
-          damping: 20,
+          duration: 8,
+          repeat: Infinity,
+          ease: 'easeInOut',
         }}
       >
         {/* Dynamic island */}
