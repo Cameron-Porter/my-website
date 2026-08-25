@@ -14,6 +14,13 @@ Marketing website for [G.R.I.T.](https://app.cameron-porter.com) — a hypertrop
 - `/privacy` — privacy policy
 - `/terms` — terms of service
 
+## Marketing Experience
+
+- Hero section uses layered gradients, tactile texture, staggered motion, and desktop-only parallax to give the landing page a polished app-launch feel.
+- Motion respects reduced-motion preferences and disables parallax on mobile viewports for accessibility and performance.
+- Primary CTA opens the G.R.I.T. app, while the secondary CTA anchors visitors into the methodology content.
+- Methodology cards use varied layouts, Lucide icons, and asymmetric surfaces to avoid repetitive template rhythm.
+
 ## Environment Variables
 
 ```env
@@ -30,6 +37,16 @@ SMTP_TO=info@cameron-porter.com
 ```bash
 npm install
 npm run dev
+```
+
+## Quality Checks
+
+```bash
+npm test
+npm run lint
+npm run typecheck
+npm run build
+npm audit --audit-level=moderate
 ```
 
 ## Deploy

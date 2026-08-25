@@ -6,37 +6,49 @@ import { render, screen } from '@testing-library/react';
 import React from 'react';
 import HeroSection from './HeroSection';
 
-// Mock framer-motion
 vi.mock('framer-motion', () => ({
-  motion: {
-    div: React.forwardRef(function MotionDiv(
-      {
-        children,
-        animate,
-        initial,
-        transition,
-        className,
-        style,
-        ...props
-      }: Record<string, unknown>,
-      ref: React.Ref<HTMLDivElement>,
-    ) {
-      return React.createElement(
-        'div',
-        {
+  motion: new Proxy(
+    {},
+    {
+      get: (_target, tag: string) =>
+        React.forwardRef<HTMLElement, Record<string, unknown>>(function MotionMock(
+          {
+            children,
+            animate,
+            initial,
+            transition,
+            className,
+            style,
+            ...props
+          },
           ref,
-          className,
-          style: style as React.CSSProperties,
-          'data-animate': JSON.stringify(animate),
-          'data-initial': JSON.stringify(initial),
-          'data-transition': JSON.stringify(transition),
-          'data-testid': props['aria-hidden'] ? 'motion-bg' : 'motion-content',
-          ...props,
-        },
-        children as React.ReactNode,
-      );
-    }),
-  },
+        ) {
+          const testId =
+            tag === 'div' && props['aria-hidden']
+              ? 'motion-bg'
+              : tag === 'div' &&
+                  typeof className === 'string' &&
+                  className.includes('max-w-[1400px]')
+                ? 'motion-content'
+                : undefined;
+
+          return React.createElement(
+            tag,
+            {
+              ref,
+              className,
+              style: style as React.CSSProperties,
+              'data-animate': JSON.stringify(animate),
+              'data-initial': JSON.stringify(initial),
+              'data-transition': JSON.stringify(transition),
+              ...(testId ? { 'data-testid': testId } : {}),
+              ...props,
+            },
+            children as React.ReactNode,
+          );
+        }),
+    },
+  ),
   useScroll: () => ({ scrollY: { get: () => 0 } }),
   useTransform: () => 0,
 }));
@@ -111,15 +123,16 @@ describe('HeroSection', () => {
     expect(screen.getByLabelText('Hero')).toBeInTheDocument();
   });
 
-  it('renders readable content on first paint while preserving animation timing', () => {
+  it('keeps the content reveal animation timing explicit', () => {
     render(<HeroSection />);
     const contentDiv = screen.getByTestId('motion-content');
     const initial = JSON.parse(contentDiv.getAttribute('data-initial') || '{}');
     const transition = JSON.parse(
       contentDiv.getAttribute('data-transition') || '{}',
     );
-    expect(initial.opacity).toBe(1);
-    expect(transition.duration).toBe(0.8);
+    expect(initial.opacity).toBe(0);
+    expect(initial.y).toBe(30);
+    expect(transition.duration).toBe(1.2);
     expect(transition.ease).toBe('easeOut');
   });
 
@@ -131,7 +144,7 @@ describe('HeroSection', () => {
     const transition = JSON.parse(
       contentDiv.getAttribute('data-transition') || '{}',
     );
-    expect(initial.opacity).toBe(1);
+    expect(initial.opacity).toBe(0);
     expect(transition.duration).toBe(0);
   });
 

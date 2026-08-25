@@ -38,7 +38,6 @@ export default function MethodologySection({
   index,
 }: MethodologySectionProps) {
   const Icon = iconMap[data.icon];
-  const isEven = index % 2 === 0;
   
   // Alternate layout patterns based on index
   const layoutVariants = [

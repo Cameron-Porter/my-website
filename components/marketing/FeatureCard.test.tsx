@@ -164,7 +164,7 @@ describe('FeatureCard', () => {
       />,
     );
     const card = screen.getByTestId('motion-div');
-    expect(card).toHaveClass('rounded-2xl');
+    expect(card.className).toContain('rounded-[1.75rem_1.75rem_2.5rem_2.5rem]');
     expect(card).toHaveClass('backdrop-blur-sm');
   });
 

@@ -11,7 +11,6 @@ import type { HeroSectionProps } from '@/lib/types/components';
 export default function HeroSection({ className }: HeroSectionProps) {
   const prefersReducedMotion = useReducedMotion();
   const [isMobile, setIsMobile] = useState(false);
-  const [scrollProgress, setScrollProgress] = useState(0);
 
   useEffect(() => {
     const checkMobile = () => setIsMobile(window.innerWidth < 768);
@@ -20,20 +19,8 @@ export default function HeroSection({ className }: HeroSectionProps) {
     return () => window.removeEventListener('resize', checkMobile);
   }, []);
 
-  useEffect(() => {
-    const handleScroll = () => {
-      const totalScroll = document.documentElement.scrollTop;
-      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
-      const progress = docHeight > 0 ? totalScroll / docHeight : 0;
-      setScrollProgress(progress);
-    };
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
-
   const { scrollY } = useScroll();
   const parallaxY = useTransform(scrollY, [0, 600], [0, -80]);
-  const noiseOffset = useTransform(scrollY, [0, 800], [0, 100]);
 
   const shouldAnimate = !prefersReducedMotion;
   const shouldParallax = shouldAnimate && !isMobile;
@@ -267,6 +254,8 @@ function FloatingElements() {
         style={{
           width: 280,
           height: 580,
+          y: parallaxY,
+          scale,
         }}
         animate={{
           y: [0, -30, 0],
@@ -395,7 +384,7 @@ function FloatingElements() {
       {/* Decorative floating elements */}
       <motion.div
         className='absolute -top-8 -right-8 flex h-20 w-20 items-center justify-center rounded-full bg-gradient-to-br from-accent-gold/10 to-transparent'
-        style={{ opacity: 0.5 }}
+        style={{ opacity: 0.5, x: parallaxX }}
         animate={{
           y: [0, -15, 0],
           x: [0, 10, 0],
