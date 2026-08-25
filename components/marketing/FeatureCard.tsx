@@ -4,10 +4,11 @@
  * FeatureCard — Displays a platform capability with icon, title, and description
  *
  * Renders a Lucide icon, title, and description inside a glassmorphism card.
+ * Uses asymmetric borders and layered shadows for tactile rebellion.
  * Hover animation uses Framer Motion (scale + elevation + border glow).
  * Respects prefers-reduced-motion by disabling animations.
  *
- * Validates: Requirements 3.3, 3.4, 3.6, 7.3
+ * Hallmark: Tactile Rebellion - layers of depth and uneven edges
  */
 
 import { motion } from 'framer-motion';
@@ -62,11 +63,11 @@ export default function FeatureCard({ data, index }: FeatureCardProps) {
   if (prefersReducedMotion) {
     return (
       <div
-        className='rounded-2xl border border-white/8 bg-white/5 p-6 backdrop-blur-sm shadow-sm'
+        className='relative overflow-hidden rounded-[1.75rem] border border-white/8 bg-white/5 p-6 backdrop-blur-sm shadow-[0_2px_4px_rgba(0,0,0,0.15),0_6px_20px_rgba(0,0,0,0.25)]'
         data-index={index}
       >
-        <div className='mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-white/5'>
-<FeatureIcon name={data.icon} />
+        <div className='mb-4 flex h-12 w-12 items-center justify-center rounded-[0.875rem] border border-white/8 bg-white/5'>
+          <FeatureIcon name={data.icon} />
         </div>
         <h3 className='mb-2 text-lg font-semibold text-primary-text'>
           {data.title}
@@ -80,14 +81,20 @@ export default function FeatureCard({ data, index }: FeatureCardProps) {
 
   return (
     <motion.div
-      className='rounded-2xl border border-white/8 bg-white/5 p-6 backdrop-blur-sm transition-colors duration-250 ease-out hover:border-accent-gold/30'
+      className='relative overflow-hidden rounded-[1.75rem_1.75rem_2.5rem_2.5rem] border border-white/8 bg-gradient-to-br from-white/5 to-white/[0.06] p-6 backdrop-blur-sm transition-colors duration-250 ease-out hover:border-accent-gold/30 hover:shadow-[0_8px_24px_rgba(0,0,0,0.3)]'
       variants={variants}
       initial='idle'
       whileHover='hover'
       data-index={index}
     >
-      <div className='mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-white/5'>
-<FeatureIcon name={data.icon} />
+      {/* Decorative gradient accent */}
+      <div
+        className='absolute -bottom-12 -right-12 h-32 w-32 rounded-full bg-accent-gold/5 blur-3xl'
+        aria-hidden='true'
+      />
+
+      <div className='relative mb-4 flex h-12 w-12 items-center justify-center rounded-xl border border-white/8 bg-white/5'>
+        <FeatureIcon name={data.icon} />
       </div>
       <h3 className='mb-2 text-lg font-semibold text-primary-text'>
         {data.title}
