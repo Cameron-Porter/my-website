@@ -135,8 +135,7 @@ export default function HeroSection({ className }: HeroSectionProps) {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.3, duration: 0.6 }}
             >
-              G.R.I.T. turns hypertrophy science into a clean mobile workflow:{' '}
-              set priorities, generate recoverable multi-week blocks, log every
+              G.R.I.T. turns hypertrophy science into a clean mobile workflow: set priorities, generate recoverable multi-week blocks, log every
               set, and adjust training from real performance feedback.
             </motion.p>
 
@@ -270,14 +269,14 @@ function FloatingElements() {
           height: 580,
         }}
         animate={{
-          y: [0, -30, 0],
-          x: [0, 15, 0],
-          scale: [1, 1.02, 1],
+          y: parallaxY,
+          x: parallaxX,
+          scale,
         }}
         transition={{
-          duration: 8,
-          repeat: Infinity,
-          ease: 'easeInOut',
+          type: 'spring',
+          stiffness: 80,
+          damping: 20,
         }}
       >
         {/* Dynamic island */}
@@ -296,8 +295,7 @@ function FloatingElements() {
           <div className='flex items-start justify-between'>
             <div>
               <div className='text-xs font-bold leading-4'>
-                <span className='text-[#E5E7EB]'>Week 2</span>{' '}
-                <span className='text-[#9CA3AF]'>Day 1</span>
+                <span className='text-[#E5E7EB]'>Week 2</span> <span className='text-[#9CA3AF]'>Day 1</span>
               </div>
               <div className='mt-1 text-[#9CA3AF] text-[11px]'>Summer Program</div>
             </div>
@@ -305,10 +303,7 @@ function FloatingElements() {
               <span className='text-[#9CA3AF] text-[11px]'>8/14</span>
               <div className='flex items-center gap-1'>
                 {[0, 1, 2].map(i => (
-                  <div
-                    key={i}
-                    className='h-1.5 w-1.5 rounded-full bg-[#9CA3AF]'
-                  />
+                  <div key={i} className='h-1.5 w-1.5 rounded-full bg-[#9CA3AF]' />
                 ))}
               </div>
             </div>
@@ -331,7 +326,11 @@ function FloatingElements() {
               <div className='flex-1 text-center'>Reps</div>
               <div className='w-[44px] text-center'>Log</div>
             </div>
-            {[[{ w: '155', r: '10', done: true }, { w: '155', r: '9', done: true }, { w: '155', r: '', done: false }]].map((row, i) => (
+            {[
+              { w: '155', r: '10', done: true },
+              { w: '155', r: '9', done: true },
+              { w: '155', r: '', done: false },
+            ].map((row, i) => (
               <div key={i} className='flex items-center gap-1.5 py-1'>
                 <div className='w-7 text-[#9CA3AF] text-[10px] text-center'>{i + 1}</div>
                 <div className={`flex-1 rounded-lg px-1 text-center text-sm font-semibold ${row.done ? 'bg-[#14B8A6]/18 text-[#14B8A6]' : 'bg-[#28282C] text-[#E5E7EB]'}`}>{row.w}</div>
@@ -363,7 +362,10 @@ function FloatingElements() {
               <div className='flex-1 text-center'>Reps</div>
               <div className='w-[44px] text-center'>Log</div>
             </div>
-            {[{ w: '30', r: '15', done: true }, { w: '30', r: '', done: false }].map((row, i) => (
+            {[
+              { w: '30', r: '15', done: true },
+              { w: '30', r: '', done: false },
+            ].map((row, i) => (
               <div key={i} className='flex items-center gap-1.5 py-1'>
                 <div className='w-7 text-[#9CA3AF] text-[10px] text-center'>{i + 1}</div>
                 <div className={`flex-1 rounded-lg px-1 text-center text-sm font-semibold ${row.done ? 'bg-[#14B8A6]/18 text-[#14B8A6]' : 'bg-[#28282C] text-[#E5E7EB]'}`}>{row.w}</div>
