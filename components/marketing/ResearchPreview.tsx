@@ -49,7 +49,7 @@ export default function ResearchPreview() {
                   key={stat.label}
                   className='rounded-2xl border border-white/8 bg-white/5 p-6 backdrop-blur-sm'
                 >
-                  <Icon className='mx-auto h-8 w-8 text-accent-gold' />
+                  <Icon className='mx-auto h-8 w-8 text-accent-jade' />
                   <div className='mt-3 text-xl font-bold text-primary-text md:text-2xl'>
                     {stat.value}
                   </div>
@@ -69,7 +69,7 @@ export default function ResearchPreview() {
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.1, duration: 0.5 }}
               >
-                <Icon className='mx-auto h-8 w-8 text-accent-gold' />
+                <Icon className='mx-auto h-8 w-8 text-accent-jade' />
                 <div className='mt-3 text-xl font-bold text-primary-text md:text-2xl'>
                   {stat.value}
                 </div>
@@ -85,7 +85,7 @@ export default function ResearchPreview() {
         <div className='mt-12'>
           <a
             href='/research'
-            className='inline-flex items-center gap-2 text-base font-semibold text-accent-gold transition-colors duration-200 hover:text-accent-gold/80'
+            className='inline-flex items-center gap-2 text-base font-semibold text-accent-jade transition-colors duration-200 hover:text-accent-jade/80'
           >
             EXPLORE THE RESEARCH ENGINE →
           </a>

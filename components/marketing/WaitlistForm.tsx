@@ -192,7 +192,7 @@ export default function WaitlistForm({ className }: WaitlistFormProps) {
         <button
           type='submit'
           disabled={isLoading}
-          className='inline-flex h-12 min-w-[160px] items-center justify-center rounded-lg bg-accent-gold px-6 text-base font-semibold text-primary-bg transition-all duration-300 ease-out hover:bg-accent-gold/90 hover:shadow-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-gold/50 focus-visible:ring-offset-2 focus-visible:ring-offset-primary-bg disabled:pointer-events-none disabled:opacity-50'
+          className='inline-flex h-12 min-w-[160px] items-center justify-center rounded-lg bg-accent-jade px-6 text-base font-semibold text-primary-bg transition-all duration-300 ease-out hover:bg-accent-jade/90 hover:shadow-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-gold/50 focus-visible:ring-offset-2 focus-visible:ring-offset-primary-bg disabled:pointer-events-none disabled:opacity-50'
         >
           {isLoading ? (
             <span className='flex items-center gap-2'>

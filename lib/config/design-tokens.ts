@@ -15,7 +15,7 @@
    /** Secondary surface — elevated dark panels */
    secondarySurface: '#1F2531',
    /** Accent teal — CTAs, highlights, brand accent */
-   accentGold: '#14B8A6',
+   accentTeal: '#14B8A6',
    /** Primary text — high-contrast light */
    primaryText: '#F5F7FA',
    /** Muted text — secondary/supporting copy */

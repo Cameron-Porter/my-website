@@ -41,12 +41,12 @@ export default function ResearchSection({ data }: ResearchSectionProps) {
         <div className='flex shrink-0 items-center justify-center rounded-xl border border-white/5 bg-primary-bg/60 p-4'>
           {Icon ? (
             <Icon
-              className='h-8 w-8 text-accent-gold'
+              className='h-8 w-8 text-accent-jade'
               aria-hidden='true'
             />
           ) : (
             <div
-              className='h-8 w-8 rounded-full bg-accent-gold/20'
+              className='h-8 w-8 rounded-full bg-accent-jade/20'
               aria-hidden='true'
             />
           )}

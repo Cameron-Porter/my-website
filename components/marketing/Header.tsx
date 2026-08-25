@@ -30,7 +30,7 @@ export default function Header({ className }: HeaderProps) {
           aria-label='Main navigation'
         >
           <Link href='/' className='group flex items-center gap-3 transition-opacity duration-200 hover:opacity-90'>
-            <span className='grid h-9 w-9 place-items-center rounded-2xl border border-accent-gold/25 bg-accent-gold/10 text-accent-gold shadow-[0_0_32px_rgba(20,184,166,0.18)]'>
+            <span className='grid h-9 w-9 place-items-center rounded-2xl border border-accent-gold/25 bg-accent-jade/10 text-accent-jade shadow-[0_0_32px_rgba(20,184,166,0.18)]'>
               <Sparkles size={18} aria-hidden='true' />
             </span>
             <span className='grid leading-tight'>
@@ -53,7 +53,7 @@ export default function Header({ className }: HeaderProps) {
                     className={cn(
                       'rounded-full px-4 py-2 text-sm font-medium transition-colors duration-200',
                       isActive
-                        ? 'bg-accent-gold/12 text-accent-gold ring-1 ring-accent-gold/25'
+                        ? 'bg-accent-jade/12 text-accent-jade ring-1 ring-accent-gold/25'
                         : 'text-muted-text hover:bg-white/5 hover:text-primary-text',
                     )}
                     aria-current={isActive ? 'page' : undefined}
@@ -68,7 +68,7 @@ export default function Header({ className }: HeaderProps) {
           <div className='flex items-center gap-3'>
             <a
               href={personalSite.links.resume}
-              className='hidden items-center rounded-full bg-accent-gold px-5 py-2 text-sm font-semibold text-primary-bg shadow-[0_0_28px_rgba(20,184,166,0.24)] transition-all duration-200 hover:bg-accent-gold/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-gold/50 md:inline-flex'
+              className='hidden items-center rounded-full bg-accent-jade px-5 py-2 text-sm font-semibold text-primary-bg shadow-[0_0_28px_rgba(20,184,166,0.24)] transition-all duration-200 hover:bg-accent-jade/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-gold/50 md:inline-flex'
             >
               Resume
             </a>

@@ -58,7 +58,7 @@ export default function MethodologyFlow() {
                 {prefersReducedMotion ? (
                   <div className='flex flex-col items-center gap-3'>
                     <div className='flex h-16 w-16 items-center justify-center rounded-2xl border border-white/10 bg-white/5 backdrop-blur-sm md:h-20 md:w-20'>
-                      <Icon className='h-7 w-7 text-accent-gold md:h-8 md:w-8' />
+                      <Icon className='h-7 w-7 text-accent-jade md:h-8 md:w-8' />
                     </div>
                     <span className='text-xs font-bold uppercase tracking-wider text-primary-text md:text-sm'>
                       {step.label}
@@ -73,7 +73,7 @@ export default function MethodologyFlow() {
                     transition={{ delay: i * 0.15, duration: 0.5 }}
                   >
                     <div className='flex h-16 w-16 items-center justify-center rounded-2xl border border-white/10 bg-white/5 backdrop-blur-sm md:h-20 md:w-20'>
-                      <Icon className='h-7 w-7 text-accent-gold md:h-8 md:w-8' />
+                      <Icon className='h-7 w-7 text-accent-jade md:h-8 md:w-8' />
                     </div>
                     <span className='text-xs font-bold uppercase tracking-wider text-primary-text md:text-sm'>
                       {step.label}
@@ -81,7 +81,7 @@ export default function MethodologyFlow() {
                   </motion.div>
                 )}
                 {i < steps.length - 1 && (
-                  <ArrowRight className='hidden h-5 w-5 text-accent-gold/60 sm:block' />
+                  <ArrowRight className='hidden h-5 w-5 text-accent-jade/60 sm:block' />
                 )}
               </div>
             );
@@ -92,7 +92,7 @@ export default function MethodologyFlow() {
         <div className='mt-12'>
           <a
             href='/methodology'
-            className='inline-flex items-center gap-2 text-base font-semibold text-accent-gold transition-colors duration-200 hover:text-accent-gold/80'
+            className='inline-flex items-center gap-2 text-base font-semibold text-accent-jade transition-colors duration-200 hover:text-accent-jade/80'
           >
             LEARN OUR METHODOLOGY →
           </a>

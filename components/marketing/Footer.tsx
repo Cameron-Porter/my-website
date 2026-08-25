@@ -29,7 +29,7 @@ export default function Footer({ className }: FooterProps) {
             <a className='rounded-full border border-white/10 px-4 py-2 text-sm text-primary-text transition hover:bg-white/10' href={personalSite.links.linkedin}>
               LinkedIn
             </a>
-            <Link className='rounded-full bg-accent-gold px-4 py-2 text-sm font-semibold text-primary-bg transition hover:bg-accent-gold/90' href='/resume'>
+            <Link className='rounded-full bg-accent-jade px-4 py-2 text-sm font-semibold text-primary-bg transition hover:bg-accent-jade/90' href='/resume'>
               Resume
             </Link>
           </div>
@@ -59,7 +59,7 @@ function FooterColumn({ title, links }: { title: string; links: { label: string;
             <li key={link.href}>
               <Link
                 href={link.href}
-                className='inline-flex min-h-[44px] items-center text-sm text-muted-text transition-colors duration-200 ease-out hover:text-accent-gold md:min-h-0'
+                className='inline-flex min-h-[44px] items-center text-sm text-muted-text transition-colors duration-200 ease-out hover:text-accent-jade md:min-h-0'
               >
                 {link.label}
               </Link>

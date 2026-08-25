@@ -43,7 +43,7 @@ export default function PricingCard({ data }: PricingCardProps) {
       {/* Badge */}
       {isRecommended && (
         <div className='absolute -top-3 left-1/2 -translate-x-1/2'>
-          <Badge className='bg-accent-gold text-primary-bg px-3 py-1 text-xs font-semibold'>
+          <Badge className='bg-accent-jade text-primary-bg px-3 py-1 text-xs font-semibold'>
             {badgeLabel ?? 'Recommended'}
           </Badge>
         </div>
@@ -74,7 +74,7 @@ export default function PricingCard({ data }: PricingCardProps) {
             <Check
               className={cn(
                 'mt-0.5 h-4 w-4 shrink-0',
-                isRecommended ? 'text-accent-gold' : 'text-muted-text',
+                isRecommended ? 'text-accent-jade' : 'text-muted-text',
               )}
               aria-hidden='true'
             />
@@ -91,7 +91,7 @@ export default function PricingCard({ data }: PricingCardProps) {
         className={cn(
           'mt-8 block w-full rounded-lg px-6 py-3 text-center text-sm font-semibold transition-colors duration-200',
           isRecommended
-            ? 'bg-accent-gold text-primary-bg hover:bg-accent-gold/90'
+            ? 'bg-accent-jade text-primary-bg hover:bg-accent-jade/90'
             : 'border border-white/10 text-primary-text hover:border-white/20 hover:bg-white/5',
         )}
       >

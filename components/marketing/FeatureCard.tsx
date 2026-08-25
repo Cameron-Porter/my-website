@@ -31,7 +31,7 @@ import type { FeatureCardProps } from '@/lib/types/components';
  */
 function FeatureIcon({ name }: { name: string }) {
   const iconProps = {
-    className: 'h-6 w-6 text-accent-gold',
+    className: 'h-6 w-6 text-accent-jade',
     'aria-hidden': 'true' as const,
   };
 
@@ -89,7 +89,7 @@ export default function FeatureCard({ data, index }: FeatureCardProps) {
     >
       {/* Decorative gradient accent */}
       <div
-        className='absolute -bottom-12 -right-12 h-32 w-32 rounded-full bg-accent-gold/5 blur-3xl'
+        className='absolute -bottom-12 -right-12 h-32 w-32 rounded-full bg-accent-jade/5 blur-3xl'
         aria-hidden='true'
       />
 
