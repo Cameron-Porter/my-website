@@ -270,14 +270,14 @@ function FloatingElements() {
           height: 580,
         }}
         animate={{
-          y: parallaxY,
-          x: parallaxX,
-          scale,
+          y: [0, -30, 0],
+          x: [0, 15, 0],
+          scale: [1, 1.02, 1],
         }}
         transition={{
-          type: 'spring',
-          stiffness: 80,
-          damping: 20,
+          duration: 8,
+          repeat: Infinity,
+          ease: 'easeInOut',
         }}
       >
         {/* Dynamic island */}
@@ -334,8 +334,8 @@ function FloatingElements() {
             {[[{ w: '155', r: '10', done: true }, { w: '155', r: '9', done: true }, { w: '155', r: '', done: false }]].map((row, i) => (
               <div key={i} className='flex items-center gap-1.5 py-1'>
                 <div className='w-7 text-[#9CA3AF] text-[10px] text-center'>{i + 1}</div>
-                <div className={`flex-1 rounded-lg px-1 text-center text-sm font-semibold ${row.active ? 'bg-[#14B8A6]/18 text-[#14B8A6]' : 'bg-[#28282C] text-[#E5E7EB]'}`}>{row.w}</div>
-                <div className={`flex-1 rounded-lg px-1 text-center text-sm font-semibold ${row.active ? 'bg-[#14B8A6]/18 text-[#14B8A6]' : row.r ? 'text-[#E5E7EB]' : 'text-[#9CA3AF]'}`}>{row.r || '–'}</div>
+                <div className={`flex-1 rounded-lg px-1 text-center text-sm font-semibold ${row.done ? 'bg-[#14B8A6]/18 text-[#14B8A6]' : 'bg-[#28282C] text-[#E5E7EB]'}`}>{row.w}</div>
+                <div className={`flex-1 rounded-lg px-1 text-center text-sm font-semibold ${row.r ? 'text-[#E5E7EB]' : 'text-[#9CA3AF]'}`}>{row.r || '–'}</div>
                 <div className='flex justify-center'>
                   {row.done ? (
                     <div className='h-5.5 w-5.5 rounded-lg bg-[#14B8A6] flex items-center justify-center'>
@@ -366,8 +366,8 @@ function FloatingElements() {
             {[{ w: '30', r: '15', done: true }, { w: '30', r: '', done: false }].map((row, i) => (
               <div key={i} className='flex items-center gap-1.5 py-1'>
                 <div className='w-7 text-[#9CA3AF] text-[10px] text-center'>{i + 1}</div>
-                <div className={`flex-1 rounded-lg px-1 text-center text-sm font-semibold ${row.active ? 'bg-[#14B8A6]/18 text-[#14B8A6]' : 'bg-[#28282C] text-[#E5E7EB]'}`}>{row.w}</div>
-                <div className={`flex-1 rounded-lg px-1 text-center text-sm font-semibold ${row.active ? 'bg-[#14B8A6]/18 text-[#14B8A6]' : row.r ? 'text-[#E5E7EB]' : 'text-[#9CA3AF]'}`}>{row.r || '–'}</div>
+                <div className={`flex-1 rounded-lg px-1 text-center text-sm font-semibold ${row.done ? 'bg-[#14B8A6]/18 text-[#14B8A6]' : 'bg-[#28282C] text-[#E5E7EB]'}`}>{row.w}</div>
+                <div className={`flex-1 rounded-lg px-1 text-center text-sm font-semibold ${row.r ? 'text-[#E5E7EB]' : 'text-[#9CA3AF]'}`}>{row.r || '–'}</div>
                 <div className='flex justify-center'>
                   {row.done ? (
                     <div className='h-5.5 w-5.5 rounded-lg bg-[#14B8A6] flex items-center justify-center'>
