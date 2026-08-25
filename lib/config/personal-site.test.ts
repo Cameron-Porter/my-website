@@ -12,8 +12,8 @@ describe('personal site content contract', () => {
 
   it('keeps the public identity professional and personal without family details', () => {
     expect(personalSite.hero.kicker).toContain('Christian');
-    expect(personalSite.hero.kicker).toContain('Coast Guard veteran');
-    expect(personalSite.hero.kicker).toContain('family man');
+    expect(personalSite.hero.kicker).toContain('Veteran');
+    expect(personalSite.hero.kicker).toContain('Family Man');
     expect(JSON.stringify(personalSite)).not.toMatch(/\b(wife|children|kids|daughter|son)\b/i);
   });
 

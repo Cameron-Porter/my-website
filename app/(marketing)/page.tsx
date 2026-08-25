@@ -16,12 +16,12 @@ export default function HomePage() {
       <div className='pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(circle_at_20%_10%,rgba(20,184,166,0.24),transparent_30%),radial-gradient(circle_at_80%_0%,rgba(245,158,11,0.16),transparent_28%),linear-gradient(180deg,#0B0D10_0%,#0F141B_55%,#0B0D10_100%)]' />
       <div className='pointer-events-none absolute left-1/2 top-0 -z-10 h-[520px] w-[520px] -translate-x-1/2 rounded-full border border-accent-gold/10 bg-accent-jade/[0.03] blur-3xl' />
 
-      <section className='mx-auto grid max-w-[1180px] gap-10 px-5 py-16 sm:px-6 md:py-24 lg:grid-cols-[1.15fr_0.85fr] lg:items-end'>
+      <section className='mx-auto grid max-w-[1180px] gap-10 px-5 py-16 sm:px-6 md:py-24 lg:grid-cols-[1.3fr_0.7fr] lg:items-end'>
         <div>
-          <p className='text- font-semibold uppercase tracking-[0.32em] text-accent-jade'>
+          <p className='whitespace-nowrap text-[clamp(0.5rem,1.8vw,0.9rem)] font-semibold uppercase tracking-[0.12em] text-accent-jade'>
             {personalSite.hero.kicker}
           </p>
-          <h1 className='mt-5 max-w-4xl font-heading text-3xl font-extrabold tracking-tight text-primary-text sm:text-4xl lg:text-6xl'>
+          <h1 className='mt-5 max-w-4xl font-heading text-3xl font-extrabold tracking-tight text-primary-text sm:text-4xl lg:text-5xl xl:text-6xl'>
             {personalSite.hero.headline}
           </h1>
           <p className='mt-6 max-w-2xl text-lg leading-8 text-muted-text'>

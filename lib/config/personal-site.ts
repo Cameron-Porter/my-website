@@ -33,12 +33,12 @@ export const primaryNavLinks: NavLink[] = [
 
 export const personalSite = {
   name: 'Cameron Porter',
-  title: 'Cameron Porter — Backend Developer, Veteran, Builder',
+  title: 'Cameron Porter · Developer',
   tagline: 'Backend Developer · TypeScript / Go · Systems-minded builder',
   description:
     'Personal website for Cameron Porter: Christian, Coast Guard veteran, backend developer, and builder of practical software tools.',
   hero: {
-    kicker: 'Christian · Coast Guard veteran · family man · backend developer',
+    kicker: 'Christian · Veteran · Family Man · Backend Dev',
     headline: 'I build practical software with discipline and clarity.',
     body:
       'I work primarily in TypeScript and Go, care about systems that serve people well, and like turning messy product ideas into dependable tools. This is my personal dojo: resume, projects, experiments, and notes from the workbench.',
