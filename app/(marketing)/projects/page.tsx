@@ -21,7 +21,7 @@ export default function ProjectsPage() {
 
       <div className='mt-12 grid gap-6 lg:grid-cols-3'>
         {projects.map((project) => (
-          <Link key={project.slug} href={project.href} className='group flex min-h-[360px] flex-col rounded-[2rem] border border-white/10 bg-white/[0.045] p-7 transition hover:-translate-y-1 hover:border-accent-gold/30 hover:bg-white/[0.065]'>
+          <Link key={project.slug} href={project.href} className='group flex min-h-[360px] flex-col rounded-[2rem] border border-black/10 dark:border-white/10 bg-black/[0.02] dark:bg-white/[0.045] p-7 transition hover:-translate-y-1 hover:border-accent-gold/30 hover:bg-black/[0.035] dark:hover:bg-white/[0.065]'>
             <p className='text-xs font-bold uppercase tracking-[0.26em] text-accent-jade'>{project.status}</p>
             <h2 className='mt-5 text-3xl font-bold text-primary-text'>{project.title}</h2>
             <p className='mt-4 text-sm leading-6 text-muted-text'>{project.summary}</p>
@@ -29,7 +29,7 @@ export default function ProjectsPage() {
             <div className='mt-auto pt-8'>
               <div className='mb-5 flex flex-wrap gap-2'>
                 {project.stack.map((item) => (
-                  <span key={item} className='rounded-full border border-white/10 px-3 py-1 text-xs text-muted-text'>{item}</span>
+                  <span key={item} className='rounded-full border border-black/10 dark:border-white/10 px-3 py-1 text-xs text-muted-text'>{item}</span>
                 ))}
               </div>
               <span className='inline-flex items-center gap-2 text-sm font-semibold text-accent-jade'>Open case study <ArrowRight size={15} /></span>

@@ -7,7 +7,7 @@ import { X } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { navLinks } from '@/lib/config/site';
 import { personalSite } from '@/lib/config/personal-site';
-import { colors } from '@/lib/config/design-tokens';
+import { cn } from '@/lib/utils';
 import type { MobileNavProps } from '@/lib/types/components';
 
 export default function MobileNav({ isOpen, onClose }: MobileNavProps) {
@@ -46,7 +46,7 @@ export default function MobileNav({ isOpen, onClose }: MobileNavProps) {
             role='dialog'
             aria-modal='true'
             aria-label='Mobile navigation'
-            className='fixed top-0 right-0 z-50 flex h-full w-[300px] max-w-[82vw] flex-col border-l border-white/10 bg-primary-bg md:hidden'
+            className='fixed top-0 right-0 z-50 flex h-full w-[300px] max-w-[82vw] flex-col border-l border-black/10 dark:border-white/10 bg-primary-bg md:hidden'
             initial={{ x: '100%' }}
             animate={{ x: 0 }}
             exit={{ x: '100%' }}
@@ -59,8 +59,7 @@ export default function MobileNav({ isOpen, onClose }: MobileNavProps) {
               <button
                 onClick={onClose}
                 aria-label='Close navigation menu'
-                className='flex h-11 w-11 items-center justify-center rounded-full transition-colors hover:bg-white/10'
-                style={{ color: colors.primaryText }}
+                className='flex h-11 w-11 items-center justify-center rounded-full text-primary-text transition-colors hover:bg-black/10 dark:hover:bg-white/10'
               >
                 <X size={24} />
               </button>
@@ -74,13 +73,12 @@ export default function MobileNav({ isOpen, onClose }: MobileNavProps) {
                     <Link
                       href={link.href}
                       onClick={onClose}
-                      className='flex h-12 items-center rounded-2xl px-4 text-base font-medium transition-colors'
-                      style={{
-                        color: isActive ? colors.accentTeal : colors.primaryText,
-                        backgroundColor: isActive ? 'rgba(20, 184, 166, 0.1)' : 'transparent',
-                        minHeight: '44px',
-                        minWidth: '44px',
-                      }}
+                      className={cn(
+                        'flex h-12 min-h-[44px] min-w-[44px] items-center rounded-2xl px-4 text-base font-medium transition-colors',
+                        isActive
+                          ? 'bg-accent-jade/10 text-accent-jade'
+                          : 'text-primary-text',
+                      )}
                       aria-current={isActive ? 'page' : undefined}
                     >
                       {link.label}
@@ -94,7 +92,7 @@ export default function MobileNav({ isOpen, onClose }: MobileNavProps) {
               <a
                 href={personalSite.links.linkedin}
                 onClick={onClose}
-                className='flex h-11 w-full items-center justify-center rounded-full border border-white/10 text-sm font-semibold text-primary-text transition-colors hover:bg-white/10'
+                className='flex h-11 w-full items-center justify-center rounded-full border border-black/10 dark:border-white/10 text-sm font-semibold text-primary-text transition-colors hover:bg-black/10 dark:hover:bg-white/10'
               >
                 LinkedIn
               </a>

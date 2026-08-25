@@ -10,7 +10,7 @@ export default function Footer({ className }: FooterProps) {
   return (
     <footer
       className={cn(
-        'border-t border-white/10 bg-secondary-surface/70 px-6 py-12 md:py-16',
+        'border-t border-black/10 dark:border-white/10 bg-secondary-surface/70 px-6 py-12 md:py-16',
         className,
       )}
     >
@@ -26,7 +26,7 @@ export default function Footer({ className }: FooterProps) {
             A dark-first software dojo for resume notes, projects, experiments, and practical tools built with service in mind.
           </p>
           <div className='flex flex-wrap gap-3'>
-            <a className='rounded-full border border-white/10 px-4 py-2 text-sm text-primary-text transition hover:bg-white/10' href={personalSite.links.linkedin}>
+            <a className='rounded-full border border-black/10 dark:border-white/10 px-4 py-2 text-sm text-primary-text transition hover:bg-black/10 dark:hover:bg-white/10' href={personalSite.links.linkedin}>
               LinkedIn
             </a>
             <Link className='rounded-full bg-accent-jade px-4 py-2 text-sm font-semibold text-primary-bg transition hover:bg-accent-jade/90' href='/resume'>
@@ -40,7 +40,7 @@ export default function Footer({ className }: FooterProps) {
         <FooterColumn title='Legal' links={legalLinks} />
       </div>
 
-      <div className='mx-auto mt-10 max-w-[1180px] border-t border-white/5 pt-6'>
+      <div className='mx-auto mt-10 max-w-[1180px] border-t border-black/5 dark:border-white/5 pt-6'>
         <p className='text-center text-xs text-muted-text'>
           &copy; {currentYear} Cameron Porter. Built from the workshop, not a template.
         </p>
