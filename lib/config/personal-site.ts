@@ -179,6 +179,6 @@ export const siteMetadata: SiteMetadata = {
     'AI engineering',
     'fitness technology',
   ],
-  ogImage: '',
+  ogImage: '/icon.png',
   url: 'https://cameron-porter.com',
 };
