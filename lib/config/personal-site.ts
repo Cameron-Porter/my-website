@@ -16,7 +16,7 @@ export type ResumeSection = {
   items: string[] | ExperienceItem[]; // Allow nested experience items
 };
 
-type ExperienceItem = {
+export type ExperienceItem = {
   role: string;
   company: string;
   dates: string;

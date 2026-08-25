@@ -2,6 +2,7 @@ import Link from 'next/link';
 import { ArrowRight, Code2, FlameKindling, Handshake, ShieldCheck, Sparkles, Terminal } from 'lucide-react';
 import { personalSite, projects, resumeSections } from '@/lib/config/personal-site';
 
+
 const principles = [
   { title: 'Service before software', body: 'The best systems help real people do meaningful work with less friction.', icon: Handshake },
   { title: 'Clarity compounds', body: 'Readable code, obvious boundaries, and honest docs are force multipliers.', icon: Sparkles },
@@ -102,12 +103,29 @@ export default function HomePage() {
             <h2 className='mt-3 font-heading text-3xl font-extrabold text-primary-text'>Backend, service, product craft.</h2>
           </div>
           <div className='grid gap-3 sm:grid-cols-2'>
-            {resumeSections.slice(1, 5).map((section) => (
-              <Link key={section.id} href='/resume' className='rounded-2xl border border-white/10 bg-primary-bg/50 p-4 transition hover:bg-primary-bg/70'>
-                <p className='text-sm font-bold text-primary-text'>{section.title}</p>
-                <p className='mt-2 text-xs leading-5 text-muted-text'>{section.items[0]}</p>
-              </Link>
-            ))}
+            {resumeSections.slice(1, 5).map((section) => {
+              const firstItem = section.items[0];
+              let previewText = '';
+              if (typeof firstItem === 'string') {
+                previewText = firstItem;
+              } else if (
+                firstItem &&
+                'bullets' in firstItem &&
+                Array.isArray(firstItem.bullets) &&
+                firstItem.bullets.length > 0
+              ) {
+                previewText = firstItem.bullets[0];
+              }
+
+              return (
+                <Link key={section.id} href='/resume' className='rounded-2xl border border-white/10 bg-primary-bg/50 p-4 transition hover:bg-primary-bg/70'>
+                  <p className='text-sm font-bold text-primary-text'>{section.title}</p>
+                  {previewText ? (
+                    <p className='mt-2 text-xs leading-5 text-muted-text'>{previewText}</p>
+                  ) : null}
+                </Link>
+              );
+            })}
           </div>
         </div>
       </section>
