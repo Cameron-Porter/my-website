@@ -43,11 +43,11 @@ export default function ThemeToggle() {
       onClick={toggleTheme}
       aria-pressed={isDark}
       aria-label={isDark ? 'Switch to light mode' : 'Switch to dark mode'}
-      className='group fixed bottom-5 right-5 z-[60] grid h-14 w-14 place-items-center rounded-full border border-ink/10 bg-primary-bg/80 backdrop-blur-md transition-transform duration-200 hover:scale-105 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-gold/60 dark:border-accent-gold/25 dark:shadow-[0_0_36px_rgba(232,184,75,0.35)]'
+      className='group fixed bottom-5 right-5 z-[60] grid h-14 w-14 place-items-center rounded-full border border-accent-jade/40 bg-primary-bg/80 backdrop-blur-md transition-transform duration-200 hover:scale-105 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-gold/60 dark:border-accent-gold/25 dark:shadow-[0_0_36px_rgba(232,184,75,0.35)]'
     >
       <span
         aria-hidden='true'
-        className='lantern-glow pointer-events-none absolute inset-0 rounded-full bg-[radial-gradient(circle_at_50%_50%,rgba(232,184,75,0.15),rgba(232,184,75,0.45)_50%,rgba(232,184,75,0.15)_100%)] opacity-0 blur-lg transition-opacity duration-500 dark:opacity-100'
+        className='lantern-glow pointer-events-none absolute inset-0 rounded-full bg-[radial-gradient(circle_at_50%_50%,rgba(232,184,75,0.85),rgba(232,184,75,0.55)_40%,transparent_65%)] opacity-0 blur-sm transition-opacity duration-500 dark:opacity-100'
       />
       <Lamp
         aria-hidden='true'
