@@ -18,10 +18,10 @@ export default function HomePage() {
 
       <section className='mx-auto grid max-w-[1180px] gap-10 px-5 py-16 sm:px-6 md:py-24 lg:grid-cols-[1.3fr_0.7fr] lg:items-end'>
         <div>
-          <p className='whitespace-nowrap text-[clamp(0.5rem,1.8vw,0.9rem)] font-semibold uppercase tracking-[0.12em] text-accent-jade'>
+          <p className='whitespace-nowrap text-md font-semibold uppercase tracking-[0.12em] text-accent-jade'>
             {personalSite.hero.kicker}
           </p>
-          <h1 className='mt-5 max-w-4xl font-heading text-3xl font-extrabold tracking-tight text-primary-text sm:text-4xl lg:text-5xl xl:text-6xl'>
+          <h1 className='mt-5 max-w-4xl font-heading text-4xl font-extrabold tracking-tight text-primary-text sm:text-5xl lg:text-5xl xl:text-6xl'>
             {personalSite.hero.headline}
           </h1>
           <p className='mt-6 max-w-2xl text-lg leading-8 text-muted-text'>
