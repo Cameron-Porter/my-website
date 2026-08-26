@@ -47,7 +47,7 @@ export default function ThemeToggle() {
     >
       <span
         aria-hidden='true'
-        className='lantern-glow lantern-breathe pointer-events-none absolute inset-0 rounded-full bg-[radial-gradient(circle_at_50%_50%,rgba(232,184,75,0.15),rgba(232,184,75,0.45)_50%,rgba(232,184,75,0.15)_100%)] opacity-0 blur-lg transition-opacity duration-500 dark:opacity-100'
+        className='lantern-glow pointer-events-none absolute inset-0 rounded-full bg-[radial-gradient(circle_at_50%_50%,rgba(232,184,75,0.15),rgba(232,184,75,0.45)_50%,rgba(232,184,75,0.15)_100%)] opacity-0 blur-lg transition-opacity duration-500 dark:opacity-100'
       />
       <Lamp
         aria-hidden='true'

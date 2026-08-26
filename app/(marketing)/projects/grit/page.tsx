@@ -26,7 +26,7 @@ const decisions = [
   },
   {
     title: 'Future trainer, trusted boundary',
-    body: 'A future AI trainer should explain, coach, and propose — then wait for confirmation before changing anything important.',
+    body: 'A future AI trainer should explain, coach, and propose, then wait for confirmation before changing anything important.',
     icon: BrainCircuit,
   },
 ];

@@ -32,7 +32,7 @@ export default function LabPage() {
         <p className='text-sm font-semibold uppercase tracking-[0.3em] text-accent-jade'>The lab</p>
         <h1 className='mt-4 font-heading text-4xl font-extrabold text-primary-text sm:text-5xl'>A jade-lit corner for experiments.</h1>
         <p className='mt-5 max-w-3xl text-lg leading-8 text-muted-text'>
-          This is where I keep active practice with AI-assisted engineering — most of it running through Hermes, a personal workflow system I built and use daily rather than a demo I built once.
+          This is where I keep active practice with AI-assisted engineering; most of it running through Hermes, a personal workflow system I leverage and use daily.
         </p>
       </div>
 

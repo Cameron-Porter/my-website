@@ -11,7 +11,7 @@ export const features: FeatureCardData[] = [
     icon: 'Brain',
     title: 'Auto-Generated Programs',
     description:
-      'Set your schedule, select your exercises, and G.R.I.T. builds a full multi-week program — complete with progressive overload built in from week one.',
+      'Set your schedule, select your exercises, and G.R.I.T. builds a full multi-week program, complete with progressive overload built in from week one.',
   },
   {
     icon: 'RefreshCw',
@@ -35,6 +35,6 @@ export const features: FeatureCardData[] = [
     icon: 'Zap',
     title: 'Quick Workouts',
     description:
-      'No program? No problem. Log a free workout on the fly with full exercise history and set tracking — no setup required.',
+      'No program? No problem. Log a free workout on the fly with full exercise history and set tracking, no setup required.',
   },
 ];

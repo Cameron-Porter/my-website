@@ -135,7 +135,7 @@ export default function HomePage() {
           <Code2 className='mx-auto text-accent-jade' aria-hidden='true' />
           <h2 className='mt-4 font-heading text-3xl font-extrabold text-primary-text'>The lab is open.</h2>
           <p className='mx-auto mt-3 max-w-2xl text-muted-text'>
-            Experiments, tool notes, AI workflows, and small interactive ideas will live in the lab — the fun corner of the workshop.
+            Experiments, tool notes, AI workflows, and small interactive ideas will live in the lab; the fun corner of the workshop.
           </p>
           <Link className='mt-6 inline-flex h-12 items-center justify-center rounded-full border border-accent-jade/30 px-6 text-sm font-semibold text-accent-jade transition hover:bg-accent-jade/10' href='/lab'>
             Visit the lab

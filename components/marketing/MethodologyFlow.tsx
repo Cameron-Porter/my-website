@@ -42,8 +42,8 @@ export default function MethodologyFlow() {
         </h2>
         <p className='mx-auto mt-4 max-w-3xl text-lg text-muted-text'>
           Train, log, rate. Over time G.R.I.T. builds a picture of how your body
-          responds — which muscles grow from what volume, which exercises deliver
-          the best pump — and feeds that back into your next week&apos;s program.
+          responds, which muscles grow from what volume, which exercises deliver
+          the best pump, and feeds that back into your next week&apos;s program.
         </p>
 
         {/* Flow diagram */}

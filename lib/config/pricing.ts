@@ -25,12 +25,12 @@ export const pricingTiers: PricingTier[] = [
   },
   {
     name: 'G.R.I.T. Pro — Annual',
-    price: 79.99,
+    price: 99.99,
     currency: '$',
     period: 'year',
     features: [
       ...proFeatures,
-      'Best value — under $7/month',
+      'Best value — under $10/month',
     ],
     isRecommended: true,
     badgeLabel: 'Best Value',

@@ -160,8 +160,8 @@ export const resumeSections: ResumeSection[] = [
     id: 'projects',
     title: 'Projects',
     items: [
-      'G.R.I.T. — training app and PWA focused on hypertrophy programming, progression, workout logging, and personal records.',
-      'Personal website — a living resume, portfolio, and lab for software craft, faith-informed service, and thoughtful technology.',
+      'G.R.I.T.: training app and PWA focused on hypertrophy programming, progression, workout logging, and personal records.',
+      'Personal website: a living resume, portfolio, and lab for software craft, faith-informed service, and thoughtful technology.',
     ],
   },
 ];
