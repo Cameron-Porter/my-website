@@ -23,7 +23,7 @@ export default function Footer({ className }: FooterProps) {
             <p className='mt-2 text-sm text-muted-text'>{siteConfig.tagline}</p>
           </div>
           <p className='max-w-sm text-sm leading-6 text-muted-text'>
-            A dark-first software dojo for resume notes, projects, experiments, and practical tools built with service in mind.
+            To enjoy what you do is a daily blessing.
           </p>
           <div className='flex flex-wrap gap-3'>
             <a className='rounded-full border border-black/10 dark:border-white/10 px-4 py-2 text-sm text-primary-text transition hover:bg-black/10 dark:hover:bg-white/10' href={personalSite.links.linkedin}>
@@ -42,7 +42,7 @@ export default function Footer({ className }: FooterProps) {
 
       <div className='mx-auto mt-10 max-w-[1180px] border-t border-black/5 dark:border-white/5 pt-6'>
         <p className='text-center text-xs text-muted-text'>
-          &copy; {currentYear} Cameron Porter. Built from the workshop, not a template.
+          &copy; {currentYear} Cameron Porter. Built from the workshop. All rights reserved.
         </p>
       </div>
     </footer>
