@@ -47,7 +47,7 @@ export const personalSite = {
     email: 'mailto:info@cameron-porter.com',
     linkedin: 'https://www.linkedin.com/in/cameron-porter-b59387197/',
     resume: '/resume',
-    resumeDownload: '/resume-2026.docx',
+    resumeDownload: '/resume.pdf',
     grit: 'https://app.cameron-porter.com',
   },
   palette: ['dark first', 'jade accent', 'warm lantern glow', 'minimal Apple-like structure'],
