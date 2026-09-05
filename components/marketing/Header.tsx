@@ -31,7 +31,7 @@ export default function Header({ className }: HeaderProps) {
           aria-label='Main navigation'
         >
           <Link href='/' className='group flex items-center gap-3 transition-opacity duration-200 hover:opacity-90'>
-            <span className='grid h-9 w-9 shrink-0 place-items-center overflow-hidden rounded-2xl border border-accent-gold/25 bg-secondary-surface shadow-[0_0_32px_rgb(var(--ember-rgb)/0.18)]'>
+            <span className='grid h-9 w-9 shrink-0 place-items-center overflow-hidden rounded-2xl border border-accent-ember/25 bg-secondary-surface shadow-[0_0_32px_rgb(var(--ember-rgb)/0.18)]'>
               <Image src='/icon.png' alt='' width={36} height={36} className='h-full w-full object-cover' priority />
             </span>
             <span className='grid leading-tight'>
@@ -54,7 +54,7 @@ export default function Header({ className }: HeaderProps) {
                     className={cn(
                       'rounded-full px-4 py-2 text-sm font-medium transition-colors duration-200',
                       isActive
-                        ? 'bg-accent-jade/12 text-accent-jade ring-1 ring-accent-gold/25'
+                        ? 'bg-accent-pine/12 text-accent-pine ring-1 ring-accent-ember/25'
                         : 'text-muted-text hover:bg-black/5 dark:hover:bg-white/5 hover:text-primary-text',
                     )}
                     aria-current={isActive ? 'page' : undefined}
@@ -69,7 +69,7 @@ export default function Header({ className }: HeaderProps) {
           <div className='flex items-center gap-3'>
             <a
               href={personalSite.links.resume}
-              className='hidden items-center rounded-full bg-accent-jade px-5 py-2 text-sm font-semibold text-on-accent shadow-[var(--glow-pine)] transition-all duration-200 hover:bg-accent-jade/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-gold/50 md:inline-flex'
+              className='hidden items-center rounded-full bg-accent-pine px-5 py-2 text-sm font-semibold text-on-accent shadow-[var(--glow-pine)] transition-all duration-200 hover:bg-accent-pine/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-ember/50 md:inline-flex'
             >
               Resume
             </a>

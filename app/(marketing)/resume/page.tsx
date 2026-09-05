@@ -20,18 +20,18 @@ export default function ResumePage() {
     <section className='mx-auto max-w-[980px] px-5 py-16 sm:px-6 md:py-24'>
       <div className='rounded-[2rem] border border-black/10 dark:border-white/10 bg-black/[0.02] dark:bg-white/[0.04] p-7 md:p-10'>
         <div className='flex items-center gap-2'>
-          <Milestone className='text-accent-gold' size={16} aria-hidden='true' />
-          <p className='text-sm font-semibold uppercase tracking-[0.3em] text-accent-jade'>Resume</p>
+          <Milestone className='text-accent-ember' size={16} aria-hidden='true' />
+          <p className='text-sm font-semibold uppercase tracking-[0.3em] text-accent-pine'>Resume</p>
         </div>
         <h1 className='mt-4 font-heading text-4xl font-extrabold text-primary-text sm:text-5xl'>Cameron Porter</h1>
         <p className='mt-4 max-w-3xl text-lg leading-8 text-muted-text'>
           Backend Software Developer II working primarily in TypeScript and Go. Coast Guard veteran. Christian. Builder of practical systems, clear APIs, training software, and AI-assisted engineering workflows.
         </p>
         <div className='mt-8 flex flex-wrap gap-3'>
-          <a className='inline-flex h-11 items-center gap-2 rounded-full bg-accent-jade px-5 text-sm font-bold text-on-accent transition hover:bg-accent-jade/90' href={personalSite.links.linkedin}>
+          <a className='inline-flex h-11 items-center gap-2 rounded-full bg-accent-pine px-5 text-sm font-bold text-on-accent transition hover:bg-accent-pine/90' href={personalSite.links.linkedin}>
             LinkedIn <ExternalLink size={15} />
           </a>
-          <a className='inline-flex h-11 items-center gap-2 rounded-full border border-accent-jade/40 px-5 text-sm font-semibold text-primary-text transition hover:bg-accent-jade/10' href={personalSite.links.resumeDownload} download>
+          <a className='inline-flex h-11 items-center gap-2 rounded-full border border-accent-pine/40 px-5 text-sm font-semibold text-primary-text transition hover:bg-accent-pine/10' href={personalSite.links.resumeDownload} download>
             Download resume <ExternalLink size={15} />
           </a>
           <Link className='inline-flex h-11 items-center rounded-full border border-black/10 dark:border-white/10 px-5 text-sm font-semibold text-primary-text transition hover:bg-black/10 dark:hover:bg-white/10' href='/projects'>
@@ -60,7 +60,7 @@ export default function ResumePage() {
                       <ul className='ml-5 space-y-2'>
                         {(item as ExperienceItem).bullets.map((bullet, bulletIdx) => (
                           <li key={bulletIdx} className='flex gap-3 text-sm leading-6 text-muted-text'>
-                            <span className='mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-accent-jade shadow-[var(--glow-pine-sm)]' />
+                            <span className='mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-accent-pine shadow-[var(--glow-pine-sm)]' />
                             <span>{bullet}</span>
                           </li>
                         ))}
@@ -71,7 +71,7 @@ export default function ResumePage() {
                 // String item (non-experience sections)
                 return (
                   <li key={idx} className='flex gap-3 text-sm leading-6 text-muted-text'>
-                    <span className='mt-2 h-2 w-2 shrink-0 rounded-full bg-accent-jade shadow-[var(--glow-pine-sm)]' />
+                    <span className='mt-2 h-2 w-2 shrink-0 rounded-full bg-accent-pine shadow-[var(--glow-pine-sm)]' />
                     <span>{item}</span>
                   </li>
                 );

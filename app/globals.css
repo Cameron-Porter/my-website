@@ -13,8 +13,8 @@
   /* === Design system colors (swap between :root and .dark below) === */
   --color-primary-bg: var(--primary-bg);
   --color-secondary-surface: var(--secondary-surface);
-  --color-accent-jade: var(--accent-jade);
-  --color-accent-gold: var(--accent-gold);
+  --color-accent-pine: var(--accent-pine);
+  --color-accent-ember: var(--accent-ember);
   --color-primary-text: var(--primary-text);
   --color-muted-text: var(--muted-text);
   --color-ink: var(--ink);
@@ -81,15 +81,13 @@
 :root {
   /* === Trail tokens: light mode — "daylight on the map" ===
      Warm paper base rather than pure white, deep pine and burnt-amber accents.
-     `--accent-jade` is the pine accent and `--accent-gold` the ember accent;
-     the variable names are historical, the values are the trail palette.
      Every pairing below clears WCAG AA against both surfaces. */
   --primary-bg: #FAF8F4;
   --secondary-surface: #EEEAE1;
   --primary-text: #12160F;
   --muted-text: #565D53;
-  --accent-jade: #0E6A45; /* pine — 6.25:1 on paper */
-  --accent-gold: #96580F; /* ember — 5.35:1 on paper */
+  --accent-pine: #0E6A45; /* pine — 6.25:1 on paper */
+  --accent-ember: #96580F; /* ember — 5.35:1 on paper */
   --ink: #12160F;
   --on-accent: #FAF8F4;
 
@@ -153,8 +151,8 @@
   --secondary-surface: #161C19;
   --primary-text: #F2F5F1;
   --muted-text: #A7B3A9; /* 8.82:1 on the base */
-  --accent-jade: #5FC48F; /* pine — 8.92:1 */
-  --accent-gold: #F0A85A; /* ember — 9.54:1 */
+  --accent-pine: #5FC48F; /* pine — 8.92:1 */
+  --accent-ember: #F0A85A; /* ember — 9.54:1 */
   --ink: #F2F5F1;
   --on-accent: #0C100E;
 

@@ -44,7 +44,7 @@ export default function ThemeToggle() {
       aria-pressed={isDark}
       aria-label={isDark ? 'Switch to light mode' : 'Switch to dark mode'}
       title={isDark ? 'Camp is lit — switch to daylight' : 'Daylight — switch to camp'}
-      className='group fixed bottom-5 right-5 z-[60] grid h-14 w-14 place-items-center rounded-full border border-accent-jade/35 bg-primary-bg/85 shadow-[var(--glow-pine-sm)] backdrop-blur-md transition-transform duration-200 hover:scale-105 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-gold/60 focus-visible:ring-offset-2 focus-visible:ring-offset-primary-bg dark:border-accent-gold/30 dark:shadow-[0_0_36px_rgb(var(--ember-rgb)/0.35)]'
+      className='group fixed bottom-5 right-5 z-[60] grid h-14 w-14 place-items-center rounded-full border border-accent-pine/35 bg-primary-bg/85 shadow-[var(--glow-pine-sm)] backdrop-blur-md transition-transform duration-200 hover:scale-105 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-ember/60 focus-visible:ring-offset-2 focus-visible:ring-offset-primary-bg dark:border-accent-ember/30 dark:shadow-[0_0_36px_rgb(var(--ember-rgb)/0.35)]'
     >
       <span
         aria-hidden='true'
@@ -55,12 +55,12 @@ export default function ThemeToggle() {
       <Sun
         aria-hidden='true'
         size={22}
-        className='relative z-10 text-accent-gold transition-colors duration-300 dark:hidden'
+        className='relative z-10 text-accent-ember transition-colors duration-300 dark:hidden'
       />
       <Flame
         aria-hidden='true'
         size={22}
-        className='relative z-10 hidden text-accent-gold drop-shadow-[0_0_12px_rgb(var(--ember-rgb)/0.9)] transition-colors duration-300 dark:block'
+        className='relative z-10 hidden text-accent-ember drop-shadow-[0_0_12px_rgb(var(--ember-rgb)/0.9)] transition-colors duration-300 dark:block'
       />
     </button>
   );

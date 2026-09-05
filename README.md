@@ -104,7 +104,7 @@ npm audit --audit-level=moderate
 
 ## Design and Content Notes
 
-- Brand direction: dark-first, minimal, jade accent, warm lantern glow, and disciplined portfolio storytelling.
+- Brand direction: dark-first, minimal, pine accent, campfire ember glow, and disciplined portfolio storytelling.
 - Primary site content is configured in `lib/config/personal-site.ts`.
 - G.R.I.T.-specific feature, methodology, pricing, and research copy is split across the config files in `lib/config/`.
 - Motion should respect reduced-motion preferences and avoid unnecessary work on small/mobile viewports.

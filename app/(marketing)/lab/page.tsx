@@ -29,8 +29,8 @@ export default function LabPage() {
     <section className='mx-auto max-w-[1080px] px-5 py-16 sm:px-6 md:py-24'>
       <div className='rounded-[2rem] border border-black/10 dark:border-white/10 bg-[image:var(--wash-ember-corner)] p-7 md:p-10'>
         <div className='flex items-center gap-2'>
-          <Milestone className='text-accent-gold' size={16} aria-hidden='true' />
-          <p className='text-sm font-semibold uppercase tracking-[0.3em] text-accent-jade'>The workshop</p>
+          <Milestone className='text-accent-ember' size={16} aria-hidden='true' />
+          <p className='text-sm font-semibold uppercase tracking-[0.3em] text-accent-pine'>The workshop</p>
         </div>
         <h1 className='mt-4 font-heading text-4xl font-extrabold text-primary-text sm:text-5xl'>A workbench for AI-assisted engineering.</h1>
         <p className='mt-5 max-w-3xl text-lg leading-8 text-muted-text'>
@@ -38,8 +38,8 @@ export default function LabPage() {
         </p>
       </div>
 
-      <div className='mt-10 rounded-[1.75rem] border border-accent-gold/20 bg-accent-jade/[0.06] p-6 md:p-8'>
-        <Workflow className='text-accent-jade' aria-hidden='true' />
+      <div className='mt-10 rounded-[1.75rem] border border-accent-ember/20 bg-accent-pine/[0.06] p-6 md:p-8'>
+        <Workflow className='text-accent-pine' aria-hidden='true' />
         <h2 className='mt-4 text-2xl font-bold text-primary-text'>Hermes, in daily use</h2>
         <p className='mt-3 max-w-2xl text-sm leading-6 text-muted-text'>
           Hermes is my human-in-the-loop AI setup: durable skills, verification steps, and agent orchestration patterns, applied to real work instead of toy problems. Three ways it earns a place in my day:
@@ -47,7 +47,7 @@ export default function LabPage() {
         <div className='mt-6 grid gap-5 sm:grid-cols-3'>
           {hermesRoles.map(({ title, body, icon: Icon }) => (
             <div key={title}>
-              <Icon className='text-accent-gold' size={22} aria-hidden='true' />
+              <Icon className='text-accent-ember' size={22} aria-hidden='true' />
               <h3 className='mt-3 text-base font-bold text-primary-text'>{title}</h3>
               <p className='mt-2 text-sm leading-6 text-muted-text'>{body}</p>
             </div>
@@ -56,7 +56,7 @@ export default function LabPage() {
       </div>
 
       <div className='mt-10 rounded-[1.75rem] border border-black/10 dark:border-white/10 bg-secondary-surface/60 p-6'>
-        <Bot className='text-accent-jade' size={24} aria-hidden='true' />
+        <Bot className='text-accent-pine' size={24} aria-hidden='true' />
         <h2 className='mt-5 text-xl font-bold text-primary-text'>What I’m learning</h2>
         <p className='mt-3 text-sm leading-6 text-muted-text'>
           The interesting part isn’t the automation, it’s the guardrails: when to trust an agent’s output, when to require verification before it acts, and how to keep a system that touches email, code, and logs from becoming a black box.
