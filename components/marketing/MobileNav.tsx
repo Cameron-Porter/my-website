@@ -99,7 +99,7 @@ export default function MobileNav({ isOpen, onClose }: MobileNavProps) {
               <Link
                 href={personalSite.links.resume}
                 onClick={onClose}
-                className='flex h-11 w-full items-center justify-center rounded-full bg-accent-jade text-sm font-semibold text-primary-bg transition-all duration-200 hover:opacity-90'
+                className='flex h-11 w-full items-center justify-center rounded-full bg-accent-jade text-sm font-semibold text-on-accent transition-all duration-200 hover:opacity-90'
               >
                 Resume
               </Link>

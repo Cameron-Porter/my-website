@@ -1,7 +1,7 @@
 'use client';
 
 import { useSyncExternalStore } from 'react';
-import { Lamp } from 'lucide-react';
+import { Flame, Sun } from 'lucide-react';
 import { THEME_STORAGE_KEY } from '@/lib/theme/theme-script';
 
 const THEME_CHANGE_EVENT = 'themechange';
@@ -43,16 +43,24 @@ export default function ThemeToggle() {
       onClick={toggleTheme}
       aria-pressed={isDark}
       aria-label={isDark ? 'Switch to light mode' : 'Switch to dark mode'}
-      className='group fixed bottom-5 right-5 z-[60] grid h-14 w-14 place-items-center rounded-full border border-accent-jade/40 bg-primary-bg/80 backdrop-blur-md transition-transform duration-200 hover:scale-105 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-gold/60 dark:border-accent-gold/25 dark:shadow-[0_0_36px_rgba(232,184,75,0.35)]'
+      title={isDark ? 'Camp is lit — switch to daylight' : 'Daylight — switch to camp'}
+      className='group fixed bottom-5 right-5 z-[60] grid h-14 w-14 place-items-center rounded-full border border-accent-jade/35 bg-primary-bg/85 shadow-[var(--glow-pine-sm)] backdrop-blur-md transition-transform duration-200 hover:scale-105 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-gold/60 focus-visible:ring-offset-2 focus-visible:ring-offset-primary-bg dark:border-accent-gold/30 dark:shadow-[0_0_36px_rgb(var(--ember-rgb)/0.35)]'
     >
       <span
         aria-hidden='true'
-        className='lantern-glow pointer-events-none absolute inset-0 rounded-full bg-[radial-gradient(circle_at_50%_50%,rgba(232,184,75,0.85),rgba(232,184,75,0.55)_40%,transparent_65%)] opacity-0 blur-sm transition-opacity duration-500 dark:opacity-100'
+        className='campfire-glow pointer-events-none absolute inset-0 rounded-full bg-[radial-gradient(circle_at_50%_50%,rgb(var(--ember-rgb)/0.85),rgb(var(--ember-rgb)/0.55)_40%,transparent_65%)] opacity-0 blur-sm transition-opacity duration-500 dark:opacity-100'
       />
-      <Lamp
+      {/* Both marks render; the theme class picks one, so the toggle is
+          correct on first paint instead of flashing after hydration. */}
+      <Sun
         aria-hidden='true'
         size={22}
-        className='relative z-10 text-muted-text/60 transition-colors duration-300 dark:text-accent-jade dark:drop-shadow-[0_0_12px_rgba(232,184,75,0.9)]'
+        className='relative z-10 text-accent-gold transition-colors duration-300 dark:hidden'
+      />
+      <Flame
+        aria-hidden='true'
+        size={22}
+        className='relative z-10 hidden text-accent-gold drop-shadow-[0_0_12px_rgb(var(--ember-rgb)/0.9)] transition-colors duration-300 dark:block'
       />
     </button>
   );

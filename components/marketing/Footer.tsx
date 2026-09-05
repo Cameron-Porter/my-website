@@ -29,7 +29,7 @@ export default function Footer({ className }: FooterProps) {
             <a className='rounded-full border border-black/10 dark:border-white/10 px-4 py-2 text-sm text-primary-text transition hover:bg-black/10 dark:hover:bg-white/10' href={personalSite.links.linkedin}>
               LinkedIn
             </a>
-            <Link className='rounded-full bg-accent-jade px-4 py-2 text-sm font-semibold text-primary-bg transition hover:bg-accent-jade/90' href='/resume'>
+            <Link className='rounded-full bg-accent-jade px-4 py-2 text-sm font-semibold text-on-accent transition hover:bg-accent-jade/90' href='/resume'>
               Resume
             </Link>
           </div>

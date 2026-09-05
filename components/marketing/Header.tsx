@@ -31,7 +31,7 @@ export default function Header({ className }: HeaderProps) {
           aria-label='Main navigation'
         >
           <Link href='/' className='group flex items-center gap-3 transition-opacity duration-200 hover:opacity-90'>
-            <span className='grid h-9 w-9 shrink-0 place-items-center overflow-hidden rounded-2xl border border-accent-gold/25 bg-black/80 shadow-[0_0_32px_rgba(232,184,75,0.18)]'>
+            <span className='grid h-9 w-9 shrink-0 place-items-center overflow-hidden rounded-2xl border border-accent-gold/25 bg-secondary-surface shadow-[0_0_32px_rgb(var(--ember-rgb)/0.18)]'>
               <Image src='/icon.png' alt='' width={36} height={36} className='h-full w-full object-cover' priority />
             </span>
             <span className='grid leading-tight'>
@@ -69,7 +69,7 @@ export default function Header({ className }: HeaderProps) {
           <div className='flex items-center gap-3'>
             <a
               href={personalSite.links.resume}
-              className='hidden items-center rounded-full bg-accent-jade px-5 py-2 text-sm font-semibold text-primary-bg shadow-[0_0_28px_rgba(20,184,166,0.24)] transition-all duration-200 hover:bg-accent-jade/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-gold/50 md:inline-flex'
+              className='hidden items-center rounded-full bg-accent-jade px-5 py-2 text-sm font-semibold text-on-accent shadow-[var(--glow-pine)] transition-all duration-200 hover:bg-accent-jade/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-gold/50 md:inline-flex'
             >
               Resume
             </a>

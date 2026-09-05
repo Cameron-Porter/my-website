@@ -34,14 +34,14 @@ const decisions = [
 export default function GritProjectPage() {
   return (
     <article className='mx-auto max-w-[1100px] px-5 py-16 sm:px-6 md:py-24'>
-      <header className='rounded-[2rem] border border-black/10 dark:border-white/10 bg-[linear-gradient(135deg,rgba(20,184,166,0.13),rgba(245,158,11,0.08))] p-7 md:p-10'>
+      <header className='rounded-[2rem] border border-black/10 dark:border-white/10 bg-[image:var(--wash-camp)] p-7 md:p-10'>
         <p className='text-sm font-semibold uppercase tracking-[0.3em] text-accent-jade'>Featured project</p>
         <h1 className='mt-4 font-heading text-4xl font-extrabold text-primary-text sm:text-6xl'>G.R.I.T.</h1>
         <p className='mt-5 max-w-3xl text-lg leading-8 text-muted-text'>
           A hypertrophy training product built around practical lifting, deterministic programming rules, workout logging, and careful AI boundaries. It is where fitness, product craft, and backend discipline meet.
         </p>
         <div className='mt-8 flex flex-wrap gap-3'>
-          <a className='inline-flex h-11 items-center gap-2 rounded-full bg-accent-jade px-5 text-sm font-bold text-primary-bg transition hover:bg-accent-jade/90' href={personalSite.links.grit}>
+          <a className='inline-flex h-11 items-center gap-2 rounded-full bg-accent-jade px-5 text-sm font-bold text-on-accent transition hover:bg-accent-jade/90' href={personalSite.links.grit}>
             Open app <ArrowRight size={16} />
           </a>
           <Link className='inline-flex h-11 items-center rounded-full border border-black/10 dark:border-white/10 px-5 text-sm font-semibold text-primary-text transition hover:bg-black/10 dark:hover:bg-white/10' href='/projects'>

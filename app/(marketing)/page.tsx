@@ -7,13 +7,13 @@ const trailCode = [
   { title: 'Service before software', body: 'The best systems help real people do meaningful work with less friction.', icon: Handshake },
   { title: 'Clarity compounds', body: 'Readable code, obvious boundaries, and honest docs are force multipliers.', icon: Sparkles },
   { title: 'Build with restraint', body: 'A focused tool that does the right thing beats a flashy tool that does too much.', icon: ShieldCheck },
-  { title: 'The lab stays open', body: 'AI, product craft, training data, and better developer workflows are all on the workbench.', icon: Terminal },
+  { title: 'The workshop stays open', body: 'AI, product craft, training data, and better developer workflows are all on the workbench.', icon: Terminal },
 ];
 
 export default function HomePage() {
   return (
     <div className='relative overflow-hidden'>
-      <div className='pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(circle_at_20%_10%,rgba(20,184,166,0.24),transparent_30%),radial-gradient(circle_at_80%_0%,rgba(245,158,11,0.16),transparent_28%),linear-gradient(180deg,#0B0D10_0%,#0F141B_55%,#0B0D10_100%)]' />
+      <div className='pointer-events-none absolute inset-0 -z-10 bg-[image:var(--wash-trailhead)]' />
       <div className='pointer-events-none absolute left-1/2 top-0 -z-10 h-[520px] w-[520px] -translate-x-1/2 rounded-full border border-accent-gold/10 bg-accent-jade/[0.03] blur-3xl' />
 
       <section className='mx-auto grid max-w-[1180px] gap-10 px-5 py-16 sm:px-6 md:py-24 lg:grid-cols-[1.3fr_0.7fr] lg:items-end'>
@@ -28,7 +28,7 @@ export default function HomePage() {
             {personalSite.hero.body}
           </p>
           <div className='mt-9 flex flex-wrap gap-3'>
-            <Link className='inline-flex h-12 items-center justify-center gap-2 rounded-full bg-accent-jade px-6 text-sm font-bold text-primary-bg shadow-[0_0_36px_rgba(20,184,166,0.28)] transition hover:bg-accent-jade/90' href='/projects'>
+            <Link className='inline-flex h-12 items-center justify-center gap-2 rounded-full bg-accent-jade px-6 text-sm font-bold text-on-accent shadow-[var(--glow-pine)] transition hover:bg-accent-jade/90' href='/projects'>
               Hit the trail <ArrowRight size={16} />
             </Link>
             <Link className='inline-flex h-12 items-center justify-center rounded-full border border-black/12 dark:border-white/12 bg-black/5 dark:bg-white/5 px-6 text-sm font-semibold text-primary-text transition hover:bg-black/10 dark:hover:bg-white/10' href='/resume'>
@@ -40,7 +40,7 @@ export default function HomePage() {
           </div>
         </div>
 
-        <aside className='rounded-[2rem] border border-black/10 dark:border-white/10 bg-black/[0.03] dark:bg-white/[0.06] p-6 shadow-[0_0_80px_rgba(245,158,11,0.08)] backdrop-blur-md'>
+        <aside className='rounded-[2rem] border border-black/10 dark:border-white/10 bg-black/[0.03] dark:bg-white/[0.06] p-6 shadow-[var(--glow-ember)] backdrop-blur-md'>
           <div className='rounded-[1.5rem] border border-accent-gold/20 bg-primary-bg/80 p-5'>
             <div className='flex items-center justify-between gap-4'>
               <p className='text-xs font-bold uppercase tracking-[0.28em] text-accent-jade'>Trail log</p>
@@ -107,7 +107,7 @@ export default function HomePage() {
       </section>
 
       <section className='mx-auto max-w-[1180px] px-5 py-16 sm:px-6'>
-        <div className='grid gap-6 rounded-[2rem] border border-black/10 dark:border-white/10 bg-[linear-gradient(135deg,rgba(20,184,166,0.12),rgba(245,158,11,0.08))] p-7 md:grid-cols-[0.9fr_1.1fr] md:p-10'>
+        <div className='grid gap-6 rounded-[2rem] border border-black/10 dark:border-white/10 bg-[image:var(--wash-camp)] p-7 md:grid-cols-[0.9fr_1.1fr] md:p-10'>
           <div>
             <div className='flex items-center gap-2'>
               <Milestone className='text-accent-gold' size={16} aria-hidden='true' />
@@ -146,12 +146,12 @@ export default function HomePage() {
       <section className='mx-auto max-w-[1180px] px-5 py-16 sm:px-6'>
         <div className='rounded-[2rem] border border-black/10 dark:border-white/10 bg-black/[0.02] dark:bg-white/[0.04] p-8 text-center'>
           <Code2 className='mx-auto text-accent-jade' aria-hidden='true' />
-          <h2 className='mt-4 font-heading text-3xl font-extrabold text-primary-text'>The lab is open.</h2>
+          <h2 className='mt-4 font-heading text-3xl font-extrabold text-primary-text'>The workshop is open.</h2>
           <p className='mx-auto mt-3 max-w-2xl text-muted-text'>
-            Experiments, tool notes, AI workflows, and small interactive ideas will live in the lab; the fun corner of camp.
+            Experiments, tool notes, AI workflows, and small interactive ideas live in the workshop; the workbench corner of camp.
           </p>
           <Link className='mt-6 inline-flex h-12 items-center justify-center rounded-full border border-accent-jade/30 px-6 text-sm font-semibold text-accent-jade transition hover:bg-accent-jade/10' href='/lab'>
-            Visit the lab
+            Visit the workshop
           </Link>
         </div>
       </section>

@@ -28,7 +28,7 @@ export default function ResumePage() {
           Backend Software Developer II working primarily in TypeScript and Go. Coast Guard veteran. Christian. Builder of practical systems, clear APIs, training software, and AI-assisted engineering workflows.
         </p>
         <div className='mt-8 flex flex-wrap gap-3'>
-          <a className='inline-flex h-11 items-center gap-2 rounded-full bg-accent-jade px-5 text-sm font-bold text-primary-bg transition hover:bg-accent-jade/90' href={personalSite.links.linkedin}>
+          <a className='inline-flex h-11 items-center gap-2 rounded-full bg-accent-jade px-5 text-sm font-bold text-on-accent transition hover:bg-accent-jade/90' href={personalSite.links.linkedin}>
             LinkedIn <ExternalLink size={15} />
           </a>
           <a className='inline-flex h-11 items-center gap-2 rounded-full border border-accent-jade/40 px-5 text-sm font-semibold text-primary-text transition hover:bg-accent-jade/10' href={personalSite.links.resumeDownload} download>
@@ -60,7 +60,7 @@ export default function ResumePage() {
                       <ul className='ml-5 space-y-2'>
                         {(item as ExperienceItem).bullets.map((bullet, bulletIdx) => (
                           <li key={bulletIdx} className='flex gap-3 text-sm leading-6 text-muted-text'>
-                            <span className='mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-accent-jade shadow-[0_0_12px_rgba(20,184,166,0.35)]' />
+                            <span className='mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-accent-jade shadow-[var(--glow-pine-sm)]' />
                             <span>{bullet}</span>
                           </li>
                         ))}
@@ -71,7 +71,7 @@ export default function ResumePage() {
                 // String item (non-experience sections)
                 return (
                   <li key={idx} className='flex gap-3 text-sm leading-6 text-muted-text'>
-                    <span className='mt-2 h-2 w-2 shrink-0 rounded-full bg-accent-jade shadow-[0_0_16px_rgba(20,184,166,0.45)]' />
+                    <span className='mt-2 h-2 w-2 shrink-0 rounded-full bg-accent-jade shadow-[var(--glow-pine-sm)]' />
                     <span>{item}</span>
                   </li>
                 );

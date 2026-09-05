@@ -4,29 +4,28 @@
  * Central source of truth for all visual design constants.
  * These tokens drive Tailwind configuration and component styling.
  * 
- * ─── HALLMARK: Tactile Rebellion ───
- * Adding physical depth through layered shadows, uneven edges, and organic textures
- * to break the "template" feel of standard SaaS aesthetics.
+ * ─── HALLMARK: Trailhead ───
+ * Night at camp: a forest-dark base, a pine accent for structure and CTAs,
+ * and a campfire ember for warmth. Physical depth through layered shadows
+ * and organic texture, so the site reads rugged rather than templated.
  */
 
-// Import CSS custom properties as the single source of truth
-// This ensures all tokens stay synchronized with globals.css
+// Mirrors the CSS custom properties in app/globals.css, which are the
+// single source of truth. Values below are the .dark theme.
 
 export const colors = {
-  /** Primary background — deep dark */
-  primaryBg: '#0B0D10', // var(--primary-bg) from .dark
-  /** Secondary surface — elevated dark panels */
-  secondarySurface: '#1B2027', // var(--secondary-surface) from .dark  
-  /** Accent teal — CTAs, highlights, brand accent */
-  accentTeal: '#2FBF8F', // var(--accent-jade) from .dark
-  /** Primary text — high-contrast light */
-  primaryText: '#F5F7FA', // var(--primary-text) from .dark
-  /** Muted text — secondary/supporting copy */
-  mutedText: '#9CA3AF', // var(--muted-text) from .dark
-  /** Warm accent for depth layers */
-  warmAccent: '#D4A574',
-  /** Cool contrast for depth layers */
-  coolDepth: '#0D3D3F',
+  /** Primary background — forest night */
+  primaryBg: '#0C100E', // var(--primary-bg) from .dark
+  /** Secondary surface — elevated spruce panels */
+  secondarySurface: '#161C19', // var(--secondary-surface) from .dark
+  /** Pine accent — CTAs, highlights, brand accent */
+  accentPine: '#5FC48F', // var(--accent-jade) from .dark
+  /** Ember accent — campfire warmth, secondary emphasis */
+  accentEmber: '#F0A85A', // var(--accent-gold) from .dark
+  /** Primary text — warm off-white */
+  primaryText: '#F2F5F1', // var(--primary-text) from .dark
+  /** Muted text — sage grey */
+  mutedText: '#A7B3A9', // var(--muted-text) from .dark
 } as const;
 
 export const typography = {
@@ -115,18 +114,18 @@ export const shadows = {
   layer2: '0 6px 20px rgba(0, 0, 0, 0.25)',
   layer3: '0 12px 40px rgba(0, 0, 0, 0.35)',
   /** Multi-directional shadow for dramatic lift */
-  dramatic: '0 20px 60px rgba(0, 0, 0, 0.4), 0 -8px 24px rgba(20, 184, 166, 0.08)',
+  dramatic: '0 20px 60px rgba(0, 0, 0, 0.4), 0 -8px 24px rgba(95, 196, 143, 0.08)',
 } as const;
 
 export const gradients = {
   /** Two-color transitions at 5-15% opacity */
-  surfaceOverlay: `linear-gradient(135deg, rgba(31, 37, 49, 0.1), rgba(11, 13, 16, 0.05))`,
-  accentGlow: `linear-gradient(135deg, rgba(20, 184, 166, 0.1), rgba(20, 184, 166, 0.05))`,
-  heroBackground: `linear-gradient(180deg, #0B0D10 0%, #1B2027 100%)`,
+  surfaceOverlay: `linear-gradient(135deg, rgba(22, 28, 25, 0.1), rgba(12, 16, 14, 0.05))`,
+  accentGlow: `linear-gradient(135deg, rgba(95, 196, 143, 0.1), rgba(95, 196, 143, 0.05))`,
+  heroBackground: `linear-gradient(180deg, #0C100E 0%, #161C19 100%)`,
   /** Complex gradient with noise overlay */
   noiseOverlay: 'linear-gradient(180deg, rgba(255,255,255,0.02) 0%, rgba(255,255,255,0.01) 50%, rgba(255,255,255,0.02) 100%)',
-  /** Subtle warm undertone */
-  warmUndertone: `linear-gradient(180deg, rgba(212, 165, 116, 0.03) 0%, transparent 100%)`,
+  /** Campfire warmth washing up from the base */
+  emberUndertone: `linear-gradient(180deg, rgba(240, 168, 90, 0.04) 0%, transparent 100%)`,
 } as const;
 
 export const transitions = {
