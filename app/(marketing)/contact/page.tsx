@@ -13,11 +13,11 @@ export default function ContactPage() {
       <div className='cut border border-[var(--hairline)] bg-secondary-surface/70 p-7 md:p-10'>
         <p className='text-sm font-extrabold uppercase tracking-[0.32em] text-accent-blaze'>Contact</p>
         <div className='rule-speed mt-4 w-20' aria-hidden='true' />
-        <h1 className='mt-4 font-heading text-4xl font-extrabold uppercase leading-[0.95] tracking-[-0.03em] text-primary-text sm:text-5xl'>Let’s build something useful.</h1>
-        <p className='mt-5 text-lg leading-8 text-muted-text'>
+        <h1 className='mt-4 max-w-[14ch] font-heading text-4xl font-extrabold uppercase leading-[0.95] tracking-[-0.03em] text-balance text-primary-text sm:text-5xl'>Let’s build something useful.</h1>
+        <p className='mt-5 max-w-2xl text-lg leading-8 text-muted-text'>
           The fastest way to reach me is email or LinkedIn. I’m interested in backend systems, product engineering, AI-assisted workflows, and practical tools that help people.
         </p>
-        <div className='mt-8 grid gap-3 sm:grid-cols-2'>
+        <div className='mt-8 grid max-w-2xl gap-3 sm:grid-cols-2'>
           <a className='inline-flex h-12 items-center justify-center gap-2 cut-sm bg-accent-blaze px-5 text-sm font-extrabold uppercase tracking-[0.14em] text-on-accent transition hover:bg-accent-blaze/90' href={personalSite.links.email}>
             <Mail size={16} /> Email Cameron
           </a>

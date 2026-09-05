@@ -30,21 +30,21 @@ export default function Header({ className }: HeaderProps) {
           className='mx-auto flex h-16 max-w-[1180px] items-center justify-between px-5 sm:px-6'
           aria-label='Main navigation'
         >
-          <Link href='/' className='group flex items-center gap-3 transition-opacity duration-200 hover:opacity-90'>
+          <Link href='/' className='group flex shrink-0 items-center gap-3 transition-opacity duration-200 hover:opacity-90'>
             <span className='cut-sm grid h-9 w-9 shrink-0 place-items-center overflow-hidden border border-accent-blaze/30 bg-secondary-surface shadow-[var(--glow-blaze-sm)]'>
               <Image src='/icon.png' alt='' width={36} height={36} className='h-full w-full object-cover' priority />
             </span>
-            <span className='grid leading-tight'>
-              <span className='font-heading text-sm font-extrabold uppercase tracking-[0.16em] text-primary-text sm:text-base'>
+            <span className='flex flex-col justify-center gap-1'>
+              <span className='font-heading text-sm font-extrabold uppercase leading-none tracking-[0.12em] whitespace-nowrap text-primary-text lg:text-[0.95rem]'>
                 {siteConfig.name}
               </span>
-              <span className='hidden text-[11px] font-bold uppercase tracking-[0.28em] text-accent-blaze sm:block'>
+              <span className='hidden text-[10px] font-bold uppercase leading-none tracking-[0.16em] whitespace-nowrap text-accent-blaze sm:block'>
                 Backend dev
               </span>
             </span>
           </Link>
 
-          <ul className='hidden items-center gap-1 md:flex'>
+          <ul className='hidden min-w-0 items-center md:flex'>
             {navLinks.map((link) => {
               const isActive = pathname === link.href;
               return (
@@ -52,7 +52,7 @@ export default function Header({ className }: HeaderProps) {
                   <Link
                     href={link.href}
                     className={cn(
-                      'px-4 py-2 text-sm font-bold uppercase tracking-[0.1em] transition-colors duration-200',
+                      'whitespace-nowrap px-2.5 py-2 text-[0.8rem] font-bold uppercase tracking-[0.08em] transition-colors duration-200 lg:px-4 lg:text-sm lg:tracking-[0.1em]',
                       isActive
                         ? 'text-accent-blaze [box-shadow:inset_0_-3px_0_0_var(--accent-blaze)]'
                         : 'text-muted-text hover:text-primary-text',
@@ -69,7 +69,7 @@ export default function Header({ className }: HeaderProps) {
           <div className='flex items-center gap-3'>
             <a
               href={personalSite.links.resume}
-              className='cut-sm hidden items-center bg-accent-blaze px-5 py-2.5 text-sm font-extrabold uppercase tracking-[0.14em] text-on-accent shadow-[var(--glow-blaze)] transition-all duration-200 hover:brightness-110 md:inline-flex'
+              className='cut-sm hidden shrink-0 items-center whitespace-nowrap bg-accent-blaze px-4 py-2.5 text-[0.8rem] font-extrabold uppercase tracking-[0.1em] text-on-accent shadow-[var(--glow-blaze)] transition-all duration-200 hover:brightness-110 md:inline-flex lg:px-5 lg:text-sm lg:tracking-[0.14em]'
             >
               Resume
             </a>
