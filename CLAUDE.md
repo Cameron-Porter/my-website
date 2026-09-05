@@ -6,7 +6,7 @@ Start by reading `AGENTS.md`; it is the canonical cross-agent guide for this pro
 
 ## Project Summary
 
-`my-website` is Cameron Porter's personal portfolio and marketing site. It is a standard Next.js 16 App Router project using React 19, TypeScript, Tailwind CSS 4, Framer Motion, Vitest, Testing Library, and Nodemailer.
+`my-website` is Cameron Porter's personal portfolio and marketing site. It is a standard Next.js 16 App Router project using React 19, TypeScript, Tailwind CSS 4, Framer Motion, Vitest, and Nodemailer.
 
 Do not describe this repository as "not typical Next.js." The important nuance is simply that it uses modern Next.js 16 App Router conventions, so framework behavior should be checked against the installed version when needed.
 
@@ -33,13 +33,10 @@ Do not commit or push unless Cameron explicitly asks.
 - `app/(marketing)/` — public route group for pages.
 - `app/api/contact/route.ts` — contact endpoint; preserve validation, honeypot behavior, SMTP checks, and safe error handling.
 - `components/marketing/` — reusable marketing and page sections.
-- `components/ui/` — shared UI primitives.
 - `components/theme/` — theme controls.
 - `lib/config/personal-site.ts` — primary portfolio/resume/projects/content source.
 - `lib/config/site.ts` — site config, nav/footer/legal links, and `APP_URL`.
-- `lib/config/` — additional G.R.I.T. marketing copy/config.
-- `lib/animations/` — motion hooks and variants.
-- `lib/utils/` — validation and rate-limit utilities.
+- `lib/utils.ts` — the `cn` class-name helper.
 - `next.config.mjs` — Turbopack root, security headers, cache headers, and redirects.
 - `vitest.config.ts`, `vitest.setup.ts` — test configuration.
 
@@ -85,7 +82,7 @@ Never print or commit real secrets. Redact any credential values in summaries.
 - Respect strict TypeScript and `noUncheckedIndexedAccess`.
 - Keep route additions in `app/(marketing)/` unless there is a clear reason not to.
 - Keep page metadata accurate when adding or changing pages.
-- Preserve the dark-first, minimal, jade-accented visual direction.
+- Preserve the dark-first, minimal visual direction: pine accent, campfire ember, warm paper in light mode.
 - Use accessible, reduced-motion-aware animation patterns.
 - Be careful changing `next.config.mjs`; CSP and cache header edits can break production behavior.
 - Contact form changes should include validation and failure-path tests when behavior changes.

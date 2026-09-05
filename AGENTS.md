@@ -22,12 +22,9 @@ Primary surfaces:
 - `app/api/contact/route.ts` — contact form endpoint with honeypot, validation, SMTP configuration checks, and email sending.
 - `components/marketing/` — reusable page sections and marketing UI.
 - `components/theme/` — theme controls.
-- `components/ui/` — shared UI primitives.
 - `lib/config/personal-site.ts` — primary source of truth for Cameron's portfolio content, resume, projects, links, and metadata.
 - `lib/config/site.ts` — exported site config, nav/footer links, legal links, and G.R.I.T. app URL.
-- `lib/config/` — G.R.I.T. feature, methodology, pricing, research, and content config.
-- `lib/animations/` — motion hooks and variants.
-- `lib/utils/` — validation and rate-limiting utilities.
+- `lib/utils.ts` — the `cn` class-name helper.
 - `public/` — static assets and downloadable files.
 
 ## Development Commands
@@ -82,8 +79,8 @@ If SMTP credentials are missing, `/api/contact` returns a 503 JSON error instead
 - Keep personal portfolio content in `lib/config/personal-site.ts` unless it is page-specific presentation copy.
 - Use the `@/*` path alias configured in `tsconfig.json` and `vitest.config.ts`.
 - Respect strict TypeScript settings, including `noUncheckedIndexedAccess`.
-- Keep motion tasteful and accessible; use reduced-motion-aware helpers from `lib/animations/` where relevant.
-- Keep the visual direction dark-first, minimal, jade-accented, with warm lantern glow.
+- Keep motion tasteful and accessible; honour `prefers-reduced-motion`, which `app/globals.css` already disables transitions under.
+- Keep the visual direction dark-first and minimal: pine accent, campfire ember, warm paper in light mode.
 - Contact form changes must preserve server-side validation and bot/honeypot handling.
 - Security header changes belong in `next.config.mjs`; be careful with CSP relaxations.
 

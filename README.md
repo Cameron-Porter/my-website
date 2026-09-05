@@ -13,7 +13,7 @@ The site also links into [G.R.I.T.](https://app.cameron-porter.com), Cameron's h
 - Framer Motion
 - Lucide icons
 - Nodemailer-backed contact form
-- Vitest, Testing Library, and fast-check for tests
+- Vitest for tests
 
 ## Routes
 
@@ -42,10 +42,8 @@ app/(marketing)/      Public marketing and portfolio pages
 app/api/contact/      Contact form email endpoint
 components/marketing/ Reusable page sections and marketing UI
 components/theme/     Theme controls
-components/ui/        Shared UI primitives
-lib/config/           Site copy, navigation, projects, resume, pricing, research, and design tokens
-lib/animations/       Motion hooks and variants
-lib/utils/            Validation and rate-limiting utilities
+lib/config/           Site copy, navigation, projects, and resume content
+lib/utils.ts          The `cn` class-name helper
 public/               Static assets and downloadable files
 ```
 
