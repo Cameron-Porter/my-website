@@ -23,7 +23,7 @@ export default function HomePage() {
 
       <section className='mx-auto grid max-w-[1180px] gap-10 px-5 py-16 sm:px-6 md:py-24 lg:grid-cols-[1.35fr_0.65fr] lg:items-end'>
         <div>
-          <p className='text-[clamp(0.6rem,2.4vw,0.8rem)] font-bold uppercase tracking-[0.32em] text-accent-blaze'>
+          <p className='whitespace-nowrap text-[clamp(0.45rem,calc(2.9vw_-_0.0725rem),0.8rem)] font-bold uppercase tracking-[0.14em] text-accent-blaze sm:tracking-[0.32em]'>
             {personalSite.hero.kicker}
           </p>
           <div className='rule-speed mt-4 w-28' aria-hidden='true' />
