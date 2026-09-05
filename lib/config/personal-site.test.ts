@@ -18,7 +18,7 @@ describe('personal site content contract', () => {
   });
 
   it('publishes LinkedIn and resume destinations', () => {
-    expect(personalSite.links.linkedin).toBe('https://www.linkedin.com/in/cameron-porter-b59387197/');
+    expect(personalSite.links.linkedin).toBe('https://www.linkedin.com/in/cameron-r-porter');
     expect(personalSite.links.resume).toBe('/resume');
   });
 

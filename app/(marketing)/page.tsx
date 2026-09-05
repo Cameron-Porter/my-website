@@ -11,9 +11,9 @@ const ridingCode = [
 
 /** Figures pulled from the experience section — the numbers do the talking. */
 const runStats = [
-  { figure: '3400%', label: 'Faster processing', detail: 'Enterprise payment pipeline, Compassion International' },
-  { figure: '$2M', label: 'Cut annually', detail: 'Automation workflows at Merkle' },
-  { figure: '6M+', label: 'Records, idempotent', detail: 'Event-driven AWS Lambda / SNS / SQS' },
+  { figure: '$5M', label: 'New income unlocked', detail: 'Third-party vendor payment integration, projected to also save $3M over four years' },
+  { figure: '3,400%', label: 'Faster processing', detail: 'Commitment and payment upsert redesign, Compassion International' },
+  { figure: '6M+', label: 'Records, idempotent', detail: 'Event-driven AWS Lambda / SNS / SQS payment pipeline' },
 ];
 
 export default function HomePage() {
@@ -63,7 +63,7 @@ export default function HomePage() {
           <ul className='mt-5 space-y-4 text-sm leading-6 text-muted-text'>
             <li><strong className='text-primary-text'>Compassion International:</strong> backend software with TypeScript and Go.</li>
             <li><strong className='text-primary-text'>G.R.I.T.:</strong> a serious training app with deterministic rules and careful AI boundaries.</li>
-            <li><strong className='text-primary-text'>Next chapter:</strong> M.S. Software Development with an AI specialization.</li>
+            <li><strong className='text-primary-text'>Next chapter:</strong> M.S. Software Engineering, AI concentration.</li>
           </ul>
         </aside>
       </section>
