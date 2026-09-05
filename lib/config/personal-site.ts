@@ -27,21 +27,21 @@ export const primaryNavLinks: NavLink[] = [
   { label: 'Home', href: '/' },
   { label: 'Resume', href: '/resume' },
   { label: 'Projects', href: '/projects' },
-  { label: 'Workshop', href: '/lab' },
+  { label: 'Garage', href: '/lab' },
   { label: 'Contact', href: '/contact' },
 ];
 
 export const personalSite = {
   name: 'Cameron Porter',
   title: 'Cameron Porter · Developer',
-  tagline: 'Backend Developer · TypeScript / Go · Adventure-minded builder',
+  tagline: 'Backend Developer · TypeScript / Go · Builds fast, lands clean',
   description:
     'Personal website for Cameron Porter: Christian, Coast Guard veteran, backend developer, and builder of practical software tools.',
   hero: {
     kicker: 'Christian · Veteran · Family Man · Backend Dev',
-    headline: 'Building useful software for the long trail.',
+    headline: 'Software that holds up at speed.',
     body:
-      'I work primarily in TypeScript and Go, care about systems that serve people well, and like turning messy product ideas into dependable tools. This is my trailhead for recruiters: resume signal, project stories, experiments, and a little grit from the workbench.',
+      'I work primarily in TypeScript and Go, care about systems that serve people well, and like turning messy product ideas into dependable tools. Payments at scale, training software, AI workflows — the fun stuff is where the stakes are real.',
   },
   links: {
     email: 'mailto:info@cameron-porter.com',
@@ -50,7 +50,7 @@ export const personalSite = {
     resumeDownload: '/resume.pdf',
     grit: 'https://app.cameron-porter.com',
   },
-  palette: ['dark trailhead', 'pine accent', 'warm campfire glow', 'rugged clean structure'],
+  palette: ['granite dark', 'blaze orange signal', 'alpine blue counterweight', 'cut edges, no soft corners'],
 } as const;
 
 export const projects: PersonalProject[] = [
@@ -78,7 +78,7 @@ export const projects: PersonalProject[] = [
     slug: 'personal-site',
     title: 'This website',
     summary:
-      'A personal resume and field guide designed around rugged minimalism, pine accents, warm campfire glow, and practical storytelling.',
+      'A personal resume and project record built on cut geometry, a high-vis blaze accent, and copy that gets to the point.',
     href: '/',
     stack: ['Next.js', 'Tailwind CSS', 'TypeScript', 'Vitest'],
     status: 'Living portfolio',

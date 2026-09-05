@@ -22,7 +22,7 @@ export default function Header({ className }: HeaderProps) {
     <>
       <header
         className={cn(
-          'sticky top-0 z-50 w-full border-b border-black/10 dark:border-white/10 bg-primary-bg/85 backdrop-blur-xl supports-[backdrop-filter]:bg-primary-bg/70',
+          'sticky top-0 z-50 w-full border-b border-[var(--hairline)] bg-primary-bg/90 backdrop-blur-xl supports-[backdrop-filter]:bg-primary-bg/75',
           className,
         )}
       >
@@ -31,15 +31,15 @@ export default function Header({ className }: HeaderProps) {
           aria-label='Main navigation'
         >
           <Link href='/' className='group flex items-center gap-3 transition-opacity duration-200 hover:opacity-90'>
-            <span className='grid h-9 w-9 shrink-0 place-items-center overflow-hidden rounded-2xl border border-accent-ember/25 bg-secondary-surface shadow-[0_0_32px_rgb(var(--ember-rgb)/0.18)]'>
+            <span className='cut-sm grid h-9 w-9 shrink-0 place-items-center overflow-hidden border border-accent-blaze/30 bg-secondary-surface shadow-[var(--glow-blaze-sm)]'>
               <Image src='/icon.png' alt='' width={36} height={36} className='h-full w-full object-cover' priority />
             </span>
             <span className='grid leading-tight'>
-              <span className='font-heading text-sm font-extrabold uppercase tracking-[0.18em] text-primary-text sm:text-base'>
+              <span className='font-heading text-sm font-extrabold uppercase tracking-[0.16em] text-primary-text sm:text-base'>
                 {siteConfig.name}
               </span>
-              <span className='hidden text-[11px] uppercase tracking-[0.24em] text-muted-text sm:block'>
-                field guide
+              <span className='hidden text-[11px] font-bold uppercase tracking-[0.28em] text-accent-blaze sm:block'>
+                Backend dev
               </span>
             </span>
           </Link>
@@ -52,10 +52,10 @@ export default function Header({ className }: HeaderProps) {
                   <Link
                     href={link.href}
                     className={cn(
-                      'rounded-full px-4 py-2 text-sm font-medium transition-colors duration-200',
+                      'px-4 py-2 text-sm font-bold uppercase tracking-[0.1em] transition-colors duration-200',
                       isActive
-                        ? 'bg-accent-pine/12 text-accent-pine ring-1 ring-accent-ember/25'
-                        : 'text-muted-text hover:bg-black/5 dark:hover:bg-white/5 hover:text-primary-text',
+                        ? 'text-accent-blaze [box-shadow:inset_0_-3px_0_0_var(--accent-blaze)]'
+                        : 'text-muted-text hover:text-primary-text',
                     )}
                     aria-current={isActive ? 'page' : undefined}
                   >
@@ -69,7 +69,7 @@ export default function Header({ className }: HeaderProps) {
           <div className='flex items-center gap-3'>
             <a
               href={personalSite.links.resume}
-              className='hidden items-center rounded-full bg-accent-pine px-5 py-2 text-sm font-semibold text-on-accent shadow-[var(--glow-pine)] transition-all duration-200 hover:bg-accent-pine/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-ember/50 md:inline-flex'
+              className='cut-sm hidden items-center bg-accent-blaze px-5 py-2.5 text-sm font-extrabold uppercase tracking-[0.14em] text-on-accent shadow-[var(--glow-blaze)] transition-all duration-200 hover:brightness-110 md:inline-flex'
             >
               Resume
             </a>
@@ -78,7 +78,7 @@ export default function Header({ className }: HeaderProps) {
               type='button'
               onClick={openMobileNav}
               aria-label='Open navigation menu'
-              className='flex h-11 w-11 items-center justify-center rounded-full text-primary-text transition-colors hover:bg-black/10 dark:hover:bg-white/10 md:hidden'
+              className='flex h-11 w-11 items-center justify-center text-primary-text transition-colors hover:text-accent-blaze md:hidden'
             >
               <Menu size={24} />
             </button>

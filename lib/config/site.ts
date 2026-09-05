@@ -9,7 +9,7 @@ export const navLinks: NavLink[] = primaryNavLinks;
 export const footerProductLinks: NavLink[] = [
   { label: 'Resume', href: '/resume' },
   { label: 'Projects', href: '/projects' },
-  { label: 'Workshop', href: '/lab' },
+  { label: 'Garage', href: '/lab' },
 ];
 
 export const footerCompanyLinks: NavLink[] = [

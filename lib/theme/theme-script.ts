@@ -1,7 +1,7 @@
 export const THEME_STORAGE_KEY = 'theme';
 
 /**
- * Runs synchronously in <head> before hydration so the campfire's lit/unlit
+ * Runs synchronously in <head> before hydration so the toggle's day/night
  * state matches the stored (or system) preference on first paint — no flash,
  * no client/server class mismatch for React to fight over.
  */

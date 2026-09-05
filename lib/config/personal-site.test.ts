@@ -22,12 +22,12 @@ describe('personal site content contract', () => {
     expect(personalSite.links.resume).toBe('/resume');
   });
 
-  it('uses personal website navigation with projects and workshop', () => {
+  it('uses personal website navigation with projects and garage', () => {
     expect(primaryNavLinks.map((link) => [link.label, link.href])).toEqual([
       ['Home', '/'],
       ['Resume', '/resume'],
       ['Projects', '/projects'],
-      ['Workshop', '/lab'],
+      ['Garage', '/lab'],
       ['Contact', '/contact'],
     ]);
   });

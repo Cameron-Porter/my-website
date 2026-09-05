@@ -76,7 +76,7 @@ export default function MobileNav({ isOpen, onClose }: MobileNavProps) {
                       className={cn(
                         'flex h-12 min-h-[44px] min-w-[44px] items-center rounded-2xl px-4 text-base font-medium transition-colors',
                         isActive
-                          ? 'bg-accent-pine/10 text-accent-pine'
+                          ? 'bg-accent-blaze/10 text-accent-blaze'
                           : 'text-primary-text',
                       )}
                       aria-current={isActive ? 'page' : undefined}
@@ -99,7 +99,7 @@ export default function MobileNav({ isOpen, onClose }: MobileNavProps) {
               <Link
                 href={personalSite.links.resume}
                 onClick={onClose}
-                className='flex h-11 w-full items-center justify-center rounded-full bg-accent-pine text-sm font-semibold text-on-accent transition-all duration-200 hover:opacity-90'
+                className='cut-sm flex h-11 w-full items-center justify-center bg-accent-blaze text-sm font-extrabold uppercase tracking-[0.14em] text-on-accent transition-all duration-200 hover:brightness-110'
               >
                 Resume
               </Link>

@@ -13,8 +13,8 @@
   /* === Design system colors (swap between :root and .dark below) === */
   --color-primary-bg: var(--primary-bg);
   --color-secondary-surface: var(--secondary-surface);
-  --color-accent-pine: var(--accent-pine);
-  --color-accent-ember: var(--accent-ember);
+  --color-accent-blaze: var(--accent-blaze);
+  --color-accent-alpine: var(--accent-alpine);
   --color-primary-text: var(--primary-text);
   --color-muted-text: var(--muted-text);
   --color-ink: var(--ink);
@@ -79,35 +79,38 @@
 }
 
 :root {
-  /* === Trail tokens: light mode — "daylight on the map" ===
-     Warm paper base rather than pure white, deep pine and burnt-amber accents.
-     Every pairing below clears WCAG AA against both surfaces. */
-  --primary-bg: #FAF8F4;
-  --secondary-surface: #EEEAE1;
-  --primary-text: #12160F;
-  --muted-text: #565D53;
-  --accent-pine: #0E6A45; /* pine — 6.25:1 on paper */
-  --accent-ember: #96580F; /* ember — 5.35:1 on paper */
-  --ink: #12160F;
-  --on-accent: #FAF8F4;
+  /* === Blaze & Alpine: light mode — "high noon" ===
+     Cool limestone base, high-vis blaze orange as the signal colour, alpine
+     blue as the cool counterweight. Every pairing clears WCAG AA against
+     both surfaces; the light blaze is darkened to #B03A0A so the small
+     uppercase kickers stay legible on the raised surface too. */
+  --primary-bg: #F6F7F8;
+  --secondary-surface: #E7EAEC;
+  --primary-text: #0B0E11;
+  --muted-text: #4C5560; /* 7.05:1 on base */
+  --accent-blaze: #B03A0A; /* 5.67:1 base / 5.03:1 surface */
+  --accent-alpine: #0369A1; /* 5.53:1 base / 4.91:1 surface */
+  --ink: #0B0E11;
+  --on-accent: #FFFFFF; /* 6.08:1 on blaze, 5.93:1 on alpine */
 
   /* Channel-only accents, so components can tint without restating the hex. */
-  --pine-rgb: 14 106 69;
-  --ember-rgb: 150 88 15;
+  --blaze-rgb: 176 58 10;
+  --alpine-rgb: 3 105 161;
 
   /* Ambient washes and glows — theme-aware in one place. */
-  --wash-trailhead:
-    radial-gradient(circle at 20% 10%, rgb(var(--pine-rgb) / 0.1), transparent 30%),
-    radial-gradient(circle at 80% 0%, rgb(var(--ember-rgb) / 0.08), transparent 28%),
-    linear-gradient(180deg, #FAF8F4 0%, #F2EFE8 55%, #FAF8F4 100%);
-  --wash-camp:
-    linear-gradient(135deg, rgb(var(--pine-rgb) / 0.1), rgb(var(--ember-rgb) / 0.07));
-  --wash-ember-corner:
-    radial-gradient(circle at top right, rgb(var(--ember-rgb) / 0.12), transparent 32%),
+  --wash-ridge:
+    radial-gradient(circle at 18% 0%, rgb(var(--blaze-rgb) / 0.12), transparent 34%),
+    radial-gradient(circle at 82% 4%, rgb(var(--alpine-rgb) / 0.09), transparent 30%),
+    linear-gradient(180deg, #F6F7F8 0%, #ECEEF0 55%, #F6F7F8 100%);
+  --wash-drop:
+    linear-gradient(115deg, rgb(var(--blaze-rgb) / 0.14), rgb(var(--alpine-rgb) / 0.08) 60%, transparent);
+  --wash-alpine-corner:
+    radial-gradient(circle at top right, rgb(var(--alpine-rgb) / 0.14), transparent 34%),
     linear-gradient(0deg, rgb(0 0 0 / 0.02), rgb(0 0 0 / 0.02));
-  --glow-pine: 0 0 36px rgb(var(--pine-rgb) / 0.22);
-  --glow-pine-sm: 0 0 14px rgb(var(--pine-rgb) / 0.28);
-  --glow-ember: 0 0 80px rgb(var(--ember-rgb) / 0.1);
+  --glow-blaze: 0 0 32px rgb(var(--blaze-rgb) / 0.26);
+  --glow-blaze-sm: 0 0 14px rgb(var(--blaze-rgb) / 0.3);
+  --glow-alpine: 0 0 70px rgb(var(--alpine-rgb) / 0.12);
+  --hairline: rgb(11 14 17 / 0.14);
 
   --card: var(--primary-bg);
   --card-foreground: var(--primary-text);
@@ -144,33 +147,34 @@
 }
 
 .dark {
-  /* === Trail tokens: dark mode — "night at camp" ===
-     The base carries a green cast instead of the old blue-grey, so the pine
-     accent and the campfire ember read as one system rather than two hues. */
-  --primary-bg: #0C100E;
-  --secondary-surface: #161C19;
-  --primary-text: #F2F5F1;
-  --muted-text: #A7B3A9; /* 8.82:1 on the base */
-  --accent-pine: #5FC48F; /* pine — 8.92:1 */
-  --accent-ember: #F0A85A; /* ember — 9.54:1 */
-  --ink: #F2F5F1;
-  --on-accent: #0C100E;
+  /* === Blaze & Alpine: dark mode — "night stage" ===
+     Granite base with a cool cast, so the blaze reads as a signal flare
+     rather than a hearth. Both accents sit above 7:1 on the base. */
+  --primary-bg: #0E1114;
+  --secondary-surface: #191D21;
+  --primary-text: #F4F7F9;
+  --muted-text: #9DA8B2; /* 7.82:1 on the base */
+  --accent-blaze: #FF7A2F; /* 7.28:1 */
+  --accent-alpine: #38BDF8; /* 8.84:1 */
+  --ink: #F4F7F9;
+  --on-accent: #0E1114; /* 7.28:1 on blaze, 8.84:1 on alpine */
 
-  --pine-rgb: 95 196 143;
-  --ember-rgb: 240 168 90;
+  --blaze-rgb: 255 122 47;
+  --alpine-rgb: 56 189 248;
 
-  --wash-trailhead:
-    radial-gradient(circle at 20% 10%, rgb(var(--pine-rgb) / 0.16), transparent 30%),
-    radial-gradient(circle at 80% 0%, rgb(var(--ember-rgb) / 0.12), transparent 28%),
-    linear-gradient(180deg, #0C100E 0%, #121814 55%, #0C100E 100%);
-  --wash-camp:
-    linear-gradient(135deg, rgb(var(--pine-rgb) / 0.12), rgb(var(--ember-rgb) / 0.08));
-  --wash-ember-corner:
-    radial-gradient(circle at top right, rgb(var(--ember-rgb) / 0.16), transparent 32%),
-    linear-gradient(0deg, rgb(255 255 255 / 0.045), rgb(255 255 255 / 0.045));
-  --glow-pine: 0 0 36px rgb(var(--pine-rgb) / 0.28);
-  --glow-pine-sm: 0 0 14px rgb(var(--pine-rgb) / 0.4);
-  --glow-ember: 0 0 80px rgb(var(--ember-rgb) / 0.12);
+  --wash-ridge:
+    radial-gradient(circle at 18% 0%, rgb(var(--blaze-rgb) / 0.2), transparent 34%),
+    radial-gradient(circle at 82% 4%, rgb(var(--alpine-rgb) / 0.14), transparent 30%),
+    linear-gradient(180deg, #0E1114 0%, #14181D 55%, #0E1114 100%);
+  --wash-drop:
+    linear-gradient(115deg, rgb(var(--blaze-rgb) / 0.18), rgb(var(--alpine-rgb) / 0.1) 60%, transparent);
+  --wash-alpine-corner:
+    radial-gradient(circle at top right, rgb(var(--alpine-rgb) / 0.18), transparent 34%),
+    linear-gradient(0deg, rgb(255 255 255 / 0.04), rgb(255 255 255 / 0.04));
+  --glow-blaze: 0 0 32px rgb(var(--blaze-rgb) / 0.34);
+  --glow-blaze-sm: 0 0 14px rgb(var(--blaze-rgb) / 0.45);
+  --glow-alpine: 0 0 70px rgb(var(--alpine-rgb) / 0.14);
+  --hairline: rgb(244 247 249 / 0.14);
 
   --background: var(--primary-bg);
   --foreground: var(--primary-text);
@@ -231,20 +235,21 @@
   }
 }
 
-/* Trail depth — layered shadow and a faint pine/ember wash over the base */
+/* Ambient wash over the base — kept faint so the blaze stays the loudest
+   thing on the page. */
 
 body,
 html {
   background-image:
-    radial-gradient(at 15% 25%, rgb(var(--pine-rgb) / 0.05), transparent 40%),
-    radial-gradient(at 85% 30%, rgb(var(--ember-rgb) / 0.05), transparent 50%);
+    radial-gradient(at 15% 25%, rgb(var(--blaze-rgb) / 0.05), transparent 40%),
+    radial-gradient(at 85% 30%, rgb(var(--alpine-rgb) / 0.05), transparent 50%);
 }
 
 .dark body,
 html.dark {
   background-image:
-    radial-gradient(at 15% 25%, rgb(var(--pine-rgb) / 0.07), transparent 40%),
-    radial-gradient(at 85% 30%, rgb(var(--ember-rgb) / 0.06), transparent 50%);
+    radial-gradient(at 15% 25%, rgb(var(--blaze-rgb) / 0.07), transparent 40%),
+    radial-gradient(at 85% 30%, rgb(var(--alpine-rgb) / 0.06), transparent 50%);
 }
 
 /* Layered depth for cards and bordered panels.
@@ -283,50 +288,99 @@ html.dark {
    utility and flattened gradient panels into a checkerboard. */
 .grain {
   background-image:
-    linear-gradient(45deg, rgb(var(--ember-rgb) / 0.02) 25%, transparent 25%),
-    linear-gradient(-45deg, rgb(var(--ember-rgb) / 0.02) 25%, transparent 25%),
-    linear-gradient(45deg, transparent 75%, rgb(var(--ember-rgb) / 0.02) 75%),
-    linear-gradient(-45deg, transparent 75%, rgb(var(--ember-rgb) / 0.02) 75%);
+    linear-gradient(45deg, rgb(var(--alpine-rgb) / 0.02) 25%, transparent 25%),
+    linear-gradient(-45deg, rgb(var(--alpine-rgb) / 0.02) 25%, transparent 25%),
+    linear-gradient(45deg, transparent 75%, rgb(var(--alpine-rgb) / 0.02) 75%),
+    linear-gradient(-45deg, transparent 75%, rgb(var(--alpine-rgb) / 0.02) 75%);
   background-size: 4px 4px;
   background-position: 0 0, 2px 2px, 2px -2px, -2px 2px;
 }
 
-/* Campfire theme toggle: the ember breathes while camp is lit (dark mode). */
-@keyframes campfire-flicker {
+/* Theme toggle: the mark pulses while the night stage is lit (dark mode). */
+@keyframes pulse-flicker {
   0%, 100% { opacity: 0.6; transform: scale(1); }
   50% { opacity: 1; transform: scale(1.08); }
 }
 
-@keyframes campfire-breathe {
+@keyframes pulse-breathe {
   0%, 100% { filter: blur(0.375rem); }
   50% { filter: blur(0.875rem); }
 }
 
-.dark .campfire-glow {
+.dark .pulse-glow {
   animation:
-    campfire-flicker 3.2s ease-in-out infinite,
-    campfire-breathe 4s ease-in-out infinite;
+    pulse-flicker 3.2s ease-in-out infinite,
+    pulse-breathe 4s ease-in-out infinite;
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .dark .campfire-glow {
+  .dark .pulse-glow {
     animation: none;
   }
 }
 
-/* Trail patch: a stitched-badge treatment for status pills and stack tags,
-   evoking a sewn fabric patch. Decorative only; never carries meaning on its own. */
-.patch {
-  position: relative;
-  isolation: isolate;
+/* ─── Kinetic geometry ───────────────────────────────────────────────
+   The panels are cut, not rounded. A soft 2rem radius reads restful; a
+   clipped corner reads like equipment and gives the layout a direction
+   to move in. All decorative — never the only carrier of meaning. */
+
+/* Chamfered panel: one corner sliced off, like a plate or a number board. */
+.cut {
+  clip-path: polygon(0 0, calc(100% - 1.75rem) 0, 100% 1.75rem, 100% 100%, 0 100%);
 }
 
-.patch::after {
+.cut-sm {
+  clip-path: polygon(0 0, calc(100% - 0.875rem) 0, 100% 0.875rem, 100% 100%, 0 100%);
+}
+
+/* Opposite corner, for panels that sit on the other side of a grid. */
+.cut-bl {
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 1.75rem 100%, 0 calc(100% - 1.75rem));
+}
+
+/* clip-path clips an element's outline and ring shadows along with its box,
+   so a chamfered control would otherwise have no visible focus indicator.
+   Draw it inside the shape instead, where the clip cannot reach it. */
+.cut:focus-visible,
+.cut-sm:focus-visible,
+.cut-bl:focus-visible {
+  outline: none;
+  box-shadow: inset 0 0 0 3px var(--accent-alpine);
+}
+
+/* Blaze edge: a hard signal bar down the leading edge of a card. Pairs
+   with .cut, which eats the corner the bar would otherwise fight. */
+.edge {
+  position: relative;
+}
+
+.edge::before {
   content: '';
   position: absolute;
-  inset: 2px;
-  border-radius: inherit;
-  border: 1px dashed currentColor;
-  opacity: 0.3;
+  inset: 0 auto 0 0;
+  width: 3px;
+  background: var(--accent-blaze);
   pointer-events: none;
+}
+
+.edge-alpine::before {
+  background: var(--accent-alpine);
+}
+
+/* Speed rule: hazard-stripe divider under section kickers. */
+.rule-speed {
+  height: 3px;
+  background: repeating-linear-gradient(
+    115deg,
+    var(--accent-blaze) 0 10px,
+    transparent 10px 16px
+  );
+}
+
+/* Stat numerals: oversized, tight, and optically aligned for the figures
+   that carry the "what did this actually do" weight. */
+.stat {
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -0.04em;
+  line-height: 0.9;
 }

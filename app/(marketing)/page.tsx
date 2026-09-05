@@ -1,73 +1,100 @@
 import Link from 'next/link';
-import { ArrowRight, Code2, FlameKindling, Handshake, Milestone, ShieldCheck, Sparkles, Terminal } from 'lucide-react';
+import { ArrowRight, Code2, Gauge, Handshake, ShieldCheck, Sparkles, Terminal } from 'lucide-react';
 import { personalSite, projects, resumeSections } from '@/lib/config/personal-site';
 
-
-const trailCode = [
+const ridingCode = [
   { title: 'Service before software', body: 'The best systems help real people do meaningful work with less friction.', icon: Handshake },
   { title: 'Clarity compounds', body: 'Readable code, obvious boundaries, and honest docs are force multipliers.', icon: Sparkles },
-  { title: 'Build with restraint', body: 'A focused tool that does the right thing beats a flashy tool that does too much.', icon: ShieldCheck },
-  { title: 'The workshop stays open', body: 'AI, product craft, training data, and better developer workflows are all on the workbench.', icon: Terminal },
+  { title: 'Commit to the line', body: 'A focused tool that does the right thing beats a flashy tool that does too much.', icon: ShieldCheck },
+  { title: 'The garage stays open', body: 'AI, product craft, training data, and better developer workflows are all on the bench.', icon: Terminal },
+];
+
+/** Figures pulled from the experience section — the numbers do the talking. */
+const runStats = [
+  { figure: '3400%', label: 'Faster processing', detail: 'Enterprise payment pipeline, Compassion International' },
+  { figure: '$2M', label: 'Cut annually', detail: 'Automation workflows at Merkle' },
+  { figure: '6M+', label: 'Records, idempotent', detail: 'Event-driven AWS Lambda / SNS / SQS' },
 ];
 
 export default function HomePage() {
   return (
     <div className='relative overflow-hidden'>
-      <div className='pointer-events-none absolute inset-0 -z-10 bg-[image:var(--wash-trailhead)]' />
-      <div className='pointer-events-none absolute left-1/2 top-0 -z-10 h-[520px] w-[520px] -translate-x-1/2 rounded-full border border-accent-ember/10 bg-accent-pine/[0.03] blur-3xl' />
+      <div className='pointer-events-none absolute inset-0 -z-10 bg-[image:var(--wash-ridge)]' />
 
-      <section className='mx-auto grid max-w-[1180px] gap-10 px-5 py-16 sm:px-6 md:py-24 lg:grid-cols-[1.3fr_0.7fr] lg:items-end'>
+      <section className='mx-auto grid max-w-[1180px] gap-10 px-5 py-16 sm:px-6 md:py-24 lg:grid-cols-[1.35fr_0.65fr] lg:items-end'>
         <div>
-          <p className='whitespace-nowrap text-[clamp(0.5rem,2.75vw,1rem)] font-semibold uppercase tracking-[0.12em] text-accent-pine'>
+          <p className='text-[clamp(0.6rem,2.4vw,0.8rem)] font-bold uppercase tracking-[0.32em] text-accent-blaze'>
             {personalSite.hero.kicker}
           </p>
-          <h1 className='mt-5 max-w-4xl font-heading text-4xl font-extrabold tracking-tight text-primary-text sm:text-5xl lg:text-5xl xl:text-6xl'>
+          <div className='rule-speed mt-4 w-28' aria-hidden='true' />
+          <h1 className='mt-6 max-w-4xl font-heading text-[clamp(2.5rem,7vw,4.5rem)] font-extrabold uppercase leading-[0.92] tracking-[-0.03em] text-primary-text'>
             {personalSite.hero.headline}
           </h1>
-          <p className='mt-6 max-w-2xl text-lg leading-8 text-muted-text'>
+          <p className='mt-7 max-w-2xl text-lg leading-8 text-muted-text'>
             {personalSite.hero.body}
           </p>
           <div className='mt-9 flex flex-wrap gap-3'>
-            <Link className='inline-flex h-12 items-center justify-center gap-2 rounded-full bg-accent-pine px-6 text-sm font-bold text-on-accent shadow-[var(--glow-pine)] transition hover:bg-accent-pine/90' href='/projects'>
-              Hit the trail <ArrowRight size={16} />
+            <Link
+              className='cut-sm inline-flex h-12 items-center justify-center gap-2 bg-accent-blaze px-7 text-sm font-extrabold uppercase tracking-[0.14em] text-on-accent shadow-[var(--glow-blaze)] transition hover:brightness-110'
+              href='/projects'
+            >
+              Drop in <ArrowRight size={16} />
             </Link>
-            <Link className='inline-flex h-12 items-center justify-center rounded-full border border-black/12 dark:border-white/12 bg-black/5 dark:bg-white/5 px-6 text-sm font-semibold text-primary-text transition hover:bg-black/10 dark:hover:bg-white/10' href='/resume'>
+            <Link
+              className='cut-sm inline-flex h-12 items-center justify-center border border-[var(--hairline)] bg-primary-text/[0.04] px-7 text-sm font-bold uppercase tracking-[0.14em] text-primary-text transition hover:border-accent-blaze/50'
+              href='/resume'
+            >
               Read the resume
             </Link>
-            <a className='inline-flex h-12 items-center justify-center rounded-full border border-black/12 dark:border-white/12 px-6 text-sm font-semibold text-muted-text transition hover:text-primary-text' href={personalSite.links.linkedin}>
+            <a
+              className='inline-flex h-12 items-center justify-center px-2 text-sm font-bold uppercase tracking-[0.14em] text-muted-text underline-offset-8 transition hover:text-accent-alpine hover:underline'
+              href={personalSite.links.linkedin}
+            >
               LinkedIn
             </a>
           </div>
         </div>
 
-        <aside className='rounded-[2rem] border border-black/10 dark:border-white/10 bg-black/[0.03] dark:bg-white/[0.06] p-6 shadow-[var(--glow-ember)] backdrop-blur-md'>
-          <div className='rounded-[1.5rem] border border-accent-ember/20 bg-primary-bg/80 p-5'>
-            <div className='flex items-center justify-between gap-4'>
-              <p className='text-xs font-bold uppercase tracking-[0.28em] text-accent-pine'>Trail log</p>
-              <FlameKindling className='text-accent-ember' size={20} aria-hidden='true' />
-            </div>
-            <ul className='mt-5 space-y-4 text-sm leading-6 text-muted-text'>
-              <li><strong className='text-primary-text'>Compassion International:</strong> backend software with TypeScript and Go.</li>
-              <li><strong className='text-primary-text'>G.R.I.T.:</strong> a serious training app with deterministic rules and careful AI boundaries.</li>
-              <li><strong className='text-primary-text'>Next chapter:</strong> M.S. Software Development with an AI specialization.</li>
-            </ul>
+        <aside className='cut edge border border-[var(--hairline)] bg-secondary-surface p-6 pl-7'>
+          <div className='flex items-center justify-between gap-4'>
+            <p className='text-xs font-extrabold uppercase tracking-[0.28em] text-accent-blaze'>Ride log</p>
+            <Gauge className='text-accent-alpine' size={20} aria-hidden='true' />
           </div>
+          <ul className='mt-5 space-y-4 text-sm leading-6 text-muted-text'>
+            <li><strong className='text-primary-text'>Compassion International:</strong> backend software with TypeScript and Go.</li>
+            <li><strong className='text-primary-text'>G.R.I.T.:</strong> a serious training app with deterministic rules and careful AI boundaries.</li>
+            <li><strong className='text-primary-text'>Next chapter:</strong> M.S. Software Development with an AI specialization.</li>
+          </ul>
         </aside>
       </section>
 
-      <section className='mx-auto max-w-[1180px] px-5 py-12 sm:px-6' aria-labelledby='trail-code-heading'>
-        <div className='flex items-center gap-2'>
-          <Milestone className='text-accent-ember' size={18} aria-hidden='true' />
-          <p className='text-sm font-semibold uppercase tracking-[0.3em] text-accent-pine'>Trail code</p>
+      <section className='mx-auto max-w-[1180px] px-5 sm:px-6' aria-labelledby='numbers-heading'>
+        <h2 id='numbers-heading' className='sr-only'>Results by the numbers</h2>
+        <div className='grid gap-px border border-[var(--hairline)] bg-[var(--hairline)] sm:grid-cols-3'>
+          {runStats.map(({ figure, label, detail }) => (
+            <div key={label} className='bg-primary-bg p-7'>
+              <p className='stat font-heading text-[clamp(2.75rem,6vw,4rem)] font-extrabold text-accent-blaze'>{figure}</p>
+              <p className='mt-3 text-sm font-extrabold uppercase tracking-[0.2em] text-primary-text'>{label}</p>
+              <p className='mt-2 text-sm leading-6 text-muted-text'>{detail}</p>
+            </div>
+          ))}
         </div>
-        <h2 id='trail-code-heading' className='mt-3 font-heading text-3xl font-extrabold text-primary-text sm:text-4xl'>
-          How I move through the woods.
+      </section>
+
+      <section className='mx-auto max-w-[1180px] px-5 py-16 sm:px-6 md:py-20' aria-labelledby='riding-code-heading'>
+        <p className='text-sm font-extrabold uppercase tracking-[0.32em] text-accent-blaze'>Rules of the line</p>
+        <div className='rule-speed mt-4 w-20' aria-hidden='true' />
+        <h2 id='riding-code-heading' className='mt-6 max-w-3xl font-heading text-3xl font-extrabold uppercase leading-[1.02] tracking-[-0.02em] text-primary-text sm:text-4xl'>
+          How I pick a line.
         </h2>
-        <div className='mt-8 grid gap-4 md:grid-cols-2 lg:grid-cols-4'>
-          {trailCode.map(({ title, body, icon: Icon }) => (
-            <article key={title} className='rounded-3xl border border-black/10 dark:border-white/10 bg-black/[0.02] dark:bg-white/[0.04] p-6 transition hover:border-accent-ember/25 hover:bg-black/[0.04] dark:hover:bg-white/[0.06]'>
-              <Icon className='text-accent-pine' size={22} aria-hidden='true' />
-              <h3 className='mt-5 text-lg font-bold text-primary-text'>{title}</h3>
+        <div className='mt-10 grid gap-5 md:grid-cols-2 lg:grid-cols-4'>
+          {ridingCode.map(({ title, body, icon: Icon }) => (
+            <article
+              key={title}
+              className='cut-sm edge border border-[var(--hairline)] bg-secondary-surface/70 p-6 pl-7 transition hover:bg-secondary-surface'
+            >
+              <Icon className='text-accent-alpine' size={22} aria-hidden='true' />
+              <h3 className='mt-5 text-base font-extrabold uppercase tracking-[0.06em] text-primary-text'>{title}</h3>
               <p className='mt-3 text-sm leading-6 text-muted-text'>{body}</p>
             </article>
           ))}
@@ -77,28 +104,34 @@ export default function HomePage() {
       <section className='mx-auto max-w-[1180px] px-5 py-16 sm:px-6' aria-labelledby='projects-heading'>
         <div className='flex flex-col gap-5 md:flex-row md:items-end md:justify-between'>
           <div>
-            <div className='flex items-center gap-2'>
-              <Milestone className='text-accent-ember' size={16} aria-hidden='true' />
-              <p className='text-sm font-semibold uppercase tracking-[0.3em] text-accent-pine'>Selected work</p>
-            </div>
-            <h2 id='projects-heading' className='mt-3 font-heading text-3xl font-extrabold text-primary-text sm:text-4xl'>
+            <p className='text-sm font-extrabold uppercase tracking-[0.32em] text-accent-blaze'>Selected work</p>
+            <div className='rule-speed mt-4 w-20' aria-hidden='true' />
+            <h2 id='projects-heading' className='mt-6 font-heading text-3xl font-extrabold uppercase leading-[1.02] tracking-[-0.02em] text-primary-text sm:text-4xl'>
               Projects with a point of view.
             </h2>
           </div>
-          <Link className='inline-flex items-center gap-2 text-sm font-semibold text-accent-pine hover:text-primary-text' href='/projects'>
-            View all projects <ArrowRight size={16} />
+          <Link className='inline-flex items-center gap-2 text-sm font-extrabold uppercase tracking-[0.14em] text-accent-alpine underline-offset-8 hover:underline' href='/projects'>
+            View all <ArrowRight size={16} />
           </Link>
         </div>
 
         <div className='mt-10 grid gap-5 lg:grid-cols-3'>
           {projects.map((project) => (
-            <Link key={project.slug} href={project.href} className='group rounded-[1.75rem] border border-black/10 dark:border-white/10 bg-secondary-surface/60 p-6 transition hover:-translate-y-1 hover:border-accent-ember/30 hover:bg-secondary-surface'>
-              <span className='patch inline-block rounded-full border border-accent-pine/30 px-3 py-1 text-xs font-bold uppercase tracking-[0.26em] text-accent-pine'>{project.status}</span>
-              <h3 className='mt-4 text-2xl font-bold text-primary-text'>{project.title}</h3>
+            <Link
+              key={project.slug}
+              href={project.href}
+              className='cut edge group border border-[var(--hairline)] bg-secondary-surface/70 p-6 pl-7 transition hover:-translate-y-1 hover:bg-secondary-surface'
+            >
+              <span className='inline-block border border-accent-blaze/40 px-2.5 py-1 text-[0.65rem] font-extrabold uppercase tracking-[0.24em] text-accent-blaze'>
+                {project.status}
+              </span>
+              <h3 className='mt-5 font-heading text-2xl font-extrabold uppercase tracking-[-0.01em] text-primary-text'>{project.title}</h3>
               <p className='mt-3 text-sm leading-6 text-muted-text'>{project.summary}</p>
               <div className='mt-5 flex flex-wrap gap-2'>
                 {project.stack.slice(0, 4).map((item) => (
-                  <span key={item} className='patch rounded-full border border-black/10 dark:border-white/10 px-3 py-1 text-xs text-muted-text'>{item}</span>
+                  <span key={item} className='border border-[var(--hairline)] px-2.5 py-1 text-[0.7rem] font-semibold uppercase tracking-[0.1em] text-muted-text'>
+                    {item}
+                  </span>
                 ))}
               </div>
             </Link>
@@ -107,13 +140,13 @@ export default function HomePage() {
       </section>
 
       <section className='mx-auto max-w-[1180px] px-5 py-16 sm:px-6'>
-        <div className='grid gap-6 rounded-[2rem] border border-black/10 dark:border-white/10 bg-[image:var(--wash-camp)] p-7 md:grid-cols-[0.9fr_1.1fr] md:p-10'>
+        <div className='cut grid gap-6 border border-[var(--hairline)] bg-[image:var(--wash-drop)] p-7 md:grid-cols-[0.9fr_1.1fr] md:p-10'>
           <div>
-            <div className='flex items-center gap-2'>
-              <Milestone className='text-accent-ember' size={16} aria-hidden='true' />
-              <p className='text-sm font-semibold uppercase tracking-[0.3em] text-accent-pine'>Resume signal</p>
-            </div>
-            <h2 className='mt-3 font-heading text-3xl font-extrabold text-primary-text'>Backend, service, product craft.</h2>
+            <p className='text-sm font-extrabold uppercase tracking-[0.32em] text-accent-blaze'>Resume signal</p>
+            <div className='rule-speed mt-4 w-20' aria-hidden='true' />
+            <h2 className='mt-6 font-heading text-3xl font-extrabold uppercase leading-[1.02] tracking-[-0.02em] text-primary-text'>
+              Backend, service, product craft.
+            </h2>
           </div>
           <div className='grid gap-3 sm:grid-cols-2'>
             {resumeSections.slice(1, 5).map((section) => {
@@ -131,8 +164,8 @@ export default function HomePage() {
               }
 
               return (
-                <Link key={section.id} href='/resume' className='rounded-2xl border border-black/10 dark:border-white/10 bg-primary-bg/50 p-4 transition hover:bg-primary-bg/70'>
-                  <p className='text-sm font-bold text-primary-text'>{section.title}</p>
+                <Link key={section.id} href='/resume' className='cut-sm border border-[var(--hairline)] bg-primary-bg/70 p-4 transition hover:border-accent-blaze/50'>
+                  <p className='text-xs font-extrabold uppercase tracking-[0.2em] text-primary-text'>{section.title}</p>
                   {previewText ? (
                     <p className='mt-2 text-xs leading-5 text-muted-text'>{previewText}</p>
                   ) : null}
@@ -143,15 +176,18 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className='mx-auto max-w-[1180px] px-5 py-16 sm:px-6'>
-        <div className='rounded-[2rem] border border-black/10 dark:border-white/10 bg-black/[0.02] dark:bg-white/[0.04] p-8 text-center'>
-          <Code2 className='mx-auto text-accent-pine' aria-hidden='true' />
-          <h2 className='mt-4 font-heading text-3xl font-extrabold text-primary-text'>The workshop is open.</h2>
-          <p className='mx-auto mt-3 max-w-2xl text-muted-text'>
-            Experiments, tool notes, AI workflows, and small interactive ideas live in the workshop; the workbench corner of camp.
+      <section className='mx-auto max-w-[1180px] px-5 pb-20 sm:px-6'>
+        <div className='cut-bl border border-[var(--hairline)] bg-secondary-surface/70 p-10 text-center'>
+          <Code2 className='mx-auto text-accent-blaze' aria-hidden='true' />
+          <h2 className='mt-5 font-heading text-3xl font-extrabold uppercase tracking-[-0.02em] text-primary-text'>The garage is open.</h2>
+          <p className='mx-auto mt-4 max-w-2xl text-muted-text'>
+            Experiments, tool notes, AI workflows, and small interactive ideas live in the garage; the bench where things get taken apart.
           </p>
-          <Link className='mt-6 inline-flex h-12 items-center justify-center rounded-full border border-accent-pine/30 px-6 text-sm font-semibold text-accent-pine transition hover:bg-accent-pine/10' href='/lab'>
-            Visit the workshop
+          <Link
+            className='cut-sm mt-7 inline-flex h-12 items-center justify-center border border-accent-blaze/50 px-7 text-sm font-extrabold uppercase tracking-[0.14em] text-accent-blaze transition hover:bg-accent-blaze hover:text-on-accent'
+            href='/lab'
+          >
+            Into the garage
           </Link>
         </div>
       </section>
