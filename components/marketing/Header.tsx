@@ -31,9 +31,16 @@ export default function Header({ className }: HeaderProps) {
           aria-label='Main navigation'
         >
           <Link href='/' className='group flex shrink-0 items-center gap-3 transition-opacity duration-200 hover:opacity-90'>
-            <span className='cut-sm grid h-9 w-9 shrink-0 place-items-center overflow-hidden border border-accent-blaze/30 bg-secondary-surface shadow-[var(--glow-blaze-sm)]'>
-              <Image src='/icon.png' alt='' width={36} height={36} className='h-full w-full object-cover' priority />
-            </span>
+            {/* The badge carries its own silhouette and transparent ground, so
+                the bordered tile that framed the old square crest is dropped. */}
+            <Image
+              src='/icon.png'
+              alt=''
+              width={44}
+              height={44}
+              className='h-10 w-10 shrink-0 object-contain'
+              priority
+            />
             <span className='flex flex-col justify-center gap-1'>
               <span className='font-heading text-sm font-extrabold uppercase leading-none tracking-[0.12em] whitespace-nowrap text-primary-text lg:text-[0.95rem]'>
                 {siteConfig.name}
