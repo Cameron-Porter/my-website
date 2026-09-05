@@ -34,14 +34,14 @@ export const primaryNavLinks: NavLink[] = [
 export const personalSite = {
   name: 'Cameron Porter',
   title: 'Cameron Porter · Developer',
-  tagline: 'Backend Developer · TypeScript / Go · Systems-minded builder',
+  tagline: 'Backend Developer · TypeScript / Go · Adventure-minded builder',
   description:
     'Personal website for Cameron Porter: Christian, Coast Guard veteran, backend developer, and builder of practical software tools.',
   hero: {
     kicker: 'Christian · Veteran · Family Man · Backend Dev',
-    headline: 'I build practical software with discipline and clarity.',
+    headline: 'Building useful software for the long trail.',
     body:
-      'I work primarily in TypeScript and Go, care about systems that serve people well, and like turning messy product ideas into dependable tools. This is my personal dojo: resume, projects, experiments, and notes from the workbench.',
+      'I work primarily in TypeScript and Go, care about systems that serve people well, and like turning messy product ideas into dependable tools. This is my trailhead for recruiters: resume signal, project stories, experiments, and a little grit from the workbench.',
   },
   links: {
     email: 'mailto:info@cameron-porter.com',
@@ -50,7 +50,7 @@ export const personalSite = {
     resumeDownload: '/resume.pdf',
     grit: 'https://app.cameron-porter.com',
   },
-  palette: ['dark first', 'jade accent', 'warm lantern glow', 'minimal Apple-like structure'],
+  palette: ['dark trailhead', 'pine accent', 'warm campfire glow', 'rugged clean structure'],
 } as const;
 
 export const projects: PersonalProject[] = [
@@ -78,7 +78,7 @@ export const projects: PersonalProject[] = [
     slug: 'personal-site',
     title: 'This website',
     summary:
-      'A personal resume and project dojo designed around dark minimalism, jade accents, warm lantern glow, and practical storytelling.',
+      'A personal resume and field guide designed around rugged minimalism, pine accents, warm campfire glow, and practical storytelling.',
     href: '/',
     stack: ['Next.js', 'Tailwind CSS', 'TypeScript', 'Vitest'],
     status: 'Living portfolio',

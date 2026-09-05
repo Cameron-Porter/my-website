@@ -1,9 +1,9 @@
 import Link from 'next/link';
-import { ArrowRight, Code2, FlameKindling, Handshake, ShieldCheck, Sparkles, Terminal } from 'lucide-react';
+import { ArrowRight, Code2, FlameKindling, Handshake, Milestone, ShieldCheck, Sparkles, Terminal } from 'lucide-react';
 import { personalSite, projects, resumeSections } from '@/lib/config/personal-site';
 
 
-const principles = [
+const trailCode = [
   { title: 'Service before software', body: 'The best systems help real people do meaningful work with less friction.', icon: Handshake },
   { title: 'Clarity compounds', body: 'Readable code, obvious boundaries, and honest docs are force multipliers.', icon: Sparkles },
   { title: 'Build with restraint', body: 'A focused tool that does the right thing beats a flashy tool that does too much.', icon: ShieldCheck },
@@ -29,7 +29,7 @@ export default function HomePage() {
           </p>
           <div className='mt-9 flex flex-wrap gap-3'>
             <Link className='inline-flex h-12 items-center justify-center gap-2 rounded-full bg-accent-jade px-6 text-sm font-bold text-primary-bg shadow-[0_0_36px_rgba(20,184,166,0.28)] transition hover:bg-accent-jade/90' href='/projects'>
-              Enter the project dojo <ArrowRight size={16} />
+              Hit the trail <ArrowRight size={16} />
             </Link>
             <Link className='inline-flex h-12 items-center justify-center rounded-full border border-black/12 dark:border-white/12 bg-black/5 dark:bg-white/5 px-6 text-sm font-semibold text-primary-text transition hover:bg-black/10 dark:hover:bg-white/10' href='/resume'>
               Read the resume
@@ -43,7 +43,7 @@ export default function HomePage() {
         <aside className='rounded-[2rem] border border-black/10 dark:border-white/10 bg-black/[0.03] dark:bg-white/[0.06] p-6 shadow-[0_0_80px_rgba(245,158,11,0.08)] backdrop-blur-md'>
           <div className='rounded-[1.5rem] border border-accent-gold/20 bg-primary-bg/80 p-5'>
             <div className='flex items-center justify-between gap-4'>
-              <p className='text-xs font-bold uppercase tracking-[0.28em] text-accent-jade'>Now building</p>
+              <p className='text-xs font-bold uppercase tracking-[0.28em] text-accent-jade'>Trail log</p>
               <FlameKindling className='text-accent-gold' size={20} aria-hidden='true' />
             </div>
             <ul className='mt-5 space-y-4 text-sm leading-6 text-muted-text'>
@@ -55,12 +55,19 @@ export default function HomePage() {
         </aside>
       </section>
 
-      <section className='mx-auto max-w-[1180px] px-5 py-12 sm:px-6'>
-        <div className='grid gap-4 md:grid-cols-2 lg:grid-cols-4'>
-          {principles.map(({ title, body, icon: Icon }) => (
+      <section className='mx-auto max-w-[1180px] px-5 py-12 sm:px-6' aria-labelledby='trail-code-heading'>
+        <div className='flex items-center gap-2'>
+          <Milestone className='text-accent-gold' size={18} aria-hidden='true' />
+          <p className='text-sm font-semibold uppercase tracking-[0.3em] text-accent-jade'>Trail code</p>
+        </div>
+        <h2 id='trail-code-heading' className='mt-3 font-heading text-3xl font-extrabold text-primary-text sm:text-4xl'>
+          How I move through the woods.
+        </h2>
+        <div className='mt-8 grid gap-4 md:grid-cols-2 lg:grid-cols-4'>
+          {trailCode.map(({ title, body, icon: Icon }) => (
             <article key={title} className='rounded-3xl border border-black/10 dark:border-white/10 bg-black/[0.02] dark:bg-white/[0.04] p-6 transition hover:border-accent-gold/25 hover:bg-black/[0.04] dark:hover:bg-white/[0.06]'>
               <Icon className='text-accent-jade' size={22} aria-hidden='true' />
-              <h2 className='mt-5 text-lg font-bold text-primary-text'>{title}</h2>
+              <h3 className='mt-5 text-lg font-bold text-primary-text'>{title}</h3>
               <p className='mt-3 text-sm leading-6 text-muted-text'>{body}</p>
             </article>
           ))}
@@ -70,7 +77,10 @@ export default function HomePage() {
       <section className='mx-auto max-w-[1180px] px-5 py-16 sm:px-6' aria-labelledby='projects-heading'>
         <div className='flex flex-col gap-5 md:flex-row md:items-end md:justify-between'>
           <div>
-            <p className='text-sm font-semibold uppercase tracking-[0.3em] text-accent-jade'>Selected work</p>
+            <div className='flex items-center gap-2'>
+              <Milestone className='text-accent-gold' size={16} aria-hidden='true' />
+              <p className='text-sm font-semibold uppercase tracking-[0.3em] text-accent-jade'>Selected work</p>
+            </div>
             <h2 id='projects-heading' className='mt-3 font-heading text-3xl font-extrabold text-primary-text sm:text-4xl'>
               Projects with a point of view.
             </h2>
@@ -83,12 +93,12 @@ export default function HomePage() {
         <div className='mt-10 grid gap-5 lg:grid-cols-3'>
           {projects.map((project) => (
             <Link key={project.slug} href={project.href} className='group rounded-[1.75rem] border border-black/10 dark:border-white/10 bg-secondary-surface/60 p-6 transition hover:-translate-y-1 hover:border-accent-gold/30 hover:bg-secondary-surface'>
-              <p className='text-xs font-bold uppercase tracking-[0.26em] text-accent-jade'>{project.status}</p>
+              <span className='patch inline-block rounded-full border border-accent-jade/30 px-3 py-1 text-xs font-bold uppercase tracking-[0.26em] text-accent-jade'>{project.status}</span>
               <h3 className='mt-4 text-2xl font-bold text-primary-text'>{project.title}</h3>
               <p className='mt-3 text-sm leading-6 text-muted-text'>{project.summary}</p>
               <div className='mt-5 flex flex-wrap gap-2'>
                 {project.stack.slice(0, 4).map((item) => (
-                  <span key={item} className='rounded-full border border-black/10 dark:border-white/10 px-3 py-1 text-xs text-muted-text'>{item}</span>
+                  <span key={item} className='patch rounded-full border border-black/10 dark:border-white/10 px-3 py-1 text-xs text-muted-text'>{item}</span>
                 ))}
               </div>
             </Link>
@@ -99,7 +109,10 @@ export default function HomePage() {
       <section className='mx-auto max-w-[1180px] px-5 py-16 sm:px-6'>
         <div className='grid gap-6 rounded-[2rem] border border-black/10 dark:border-white/10 bg-[linear-gradient(135deg,rgba(20,184,166,0.12),rgba(245,158,11,0.08))] p-7 md:grid-cols-[0.9fr_1.1fr] md:p-10'>
           <div>
-            <p className='text-sm font-semibold uppercase tracking-[0.3em] text-accent-jade'>Resume signal</p>
+            <div className='flex items-center gap-2'>
+              <Milestone className='text-accent-gold' size={16} aria-hidden='true' />
+              <p className='text-sm font-semibold uppercase tracking-[0.3em] text-accent-jade'>Resume signal</p>
+            </div>
             <h2 className='mt-3 font-heading text-3xl font-extrabold text-primary-text'>Backend, service, product craft.</h2>
           </div>
           <div className='grid gap-3 sm:grid-cols-2'>
@@ -135,7 +148,7 @@ export default function HomePage() {
           <Code2 className='mx-auto text-accent-jade' aria-hidden='true' />
           <h2 className='mt-4 font-heading text-3xl font-extrabold text-primary-text'>The lab is open.</h2>
           <p className='mx-auto mt-3 max-w-2xl text-muted-text'>
-            Experiments, tool notes, AI workflows, and small interactive ideas will live in the lab; the fun corner of the workshop.
+            Experiments, tool notes, AI workflows, and small interactive ideas will live in the lab; the fun corner of camp.
           </p>
           <Link className='mt-6 inline-flex h-12 items-center justify-center rounded-full border border-accent-jade/30 px-6 text-sm font-semibold text-accent-jade transition hover:bg-accent-jade/10' href='/lab'>
             Visit the lab

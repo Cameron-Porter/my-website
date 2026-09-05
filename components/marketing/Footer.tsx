@@ -42,7 +42,7 @@ export default function Footer({ className }: FooterProps) {
 
       <div className='mx-auto mt-10 max-w-[1180px] border-t border-black/5 dark:border-white/5 pt-6'>
         <p className='text-center text-xs text-muted-text'>
-          &copy; {currentYear} Cameron Porter. Built from the workshop. All rights reserved.
+          &copy; {currentYear} Cameron Porter. Built at the trailhead. All rights reserved.
         </p>
       </div>
     </footer>

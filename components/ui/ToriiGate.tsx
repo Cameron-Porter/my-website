@@ -14,6 +14,8 @@ export function ToriiGate({
       strokeLinecap='round'
       strokeLinejoin='round'
       className={className}
+      width={size}
+      height={size}
       aria-hidden='true'
     >
       {/* Main pillars */}

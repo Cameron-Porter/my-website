@@ -1,6 +1,5 @@
 import type { Metadata } from 'next';
-import Link from 'next/link';
-import { AlarmClock, Bot, Code2, ScrollText, Sparkles, Workflow } from 'lucide-react';
+import { AlarmClock, Bot, Code2, Milestone, ScrollText, Workflow } from 'lucide-react';
 
 export const metadata: Metadata = {
   title: 'Lab',
@@ -29,8 +28,11 @@ export default function LabPage() {
   return (
     <section className='mx-auto max-w-[1080px] px-5 py-16 sm:px-6 md:py-24'>
       <div className='rounded-[2rem] border border-black/10 dark:border-white/10 bg-[radial-gradient(circle_at_top_right,rgba(245,158,11,0.16),transparent_32%),rgba(0,0,0,0.02)] dark:bg-[radial-gradient(circle_at_top_right,rgba(245,158,11,0.16),transparent_32%),rgba(255,255,255,0.045)] p-7 md:p-10'>
-        <p className='text-sm font-semibold uppercase tracking-[0.3em] text-accent-jade'>The lab</p>
-        <h1 className='mt-4 font-heading text-4xl font-extrabold text-primary-text sm:text-5xl'>A jade-lit corner for experiments.</h1>
+        <div className='flex items-center gap-2'>
+          <Milestone className='text-accent-gold' size={16} aria-hidden='true' />
+          <p className='text-sm font-semibold uppercase tracking-[0.3em] text-accent-jade'>The lab</p>
+        </div>
+        <h1 className='mt-4 font-heading text-4xl font-extrabold text-primary-text sm:text-5xl'>A campfire corner for experiments.</h1>
         <p className='mt-5 max-w-3xl text-lg leading-8 text-muted-text'>
           This is where I keep active practice with AI-assisted engineering; most of it running through Hermes, a personal workflow system I leverage and use daily.
         </p>

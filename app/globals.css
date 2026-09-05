@@ -281,3 +281,20 @@ html.dark {
     animation: none;
   }
 }
+
+/* Trail patch: a stitched-badge treatment for status pills and stack tags,
+   evoking a sewn fabric patch. Decorative only; never carries meaning on its own. */
+.patch {
+  position: relative;
+  isolation: isolate;
+}
+
+.patch::after {
+  content: '';
+  position: absolute;
+  inset: 2px;
+  border-radius: inherit;
+  border: 1px dashed currentColor;
+  opacity: 0.3;
+  pointer-events: none;
+}

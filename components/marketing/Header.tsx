@@ -39,7 +39,7 @@ export default function Header({ className }: HeaderProps) {
                 {siteConfig.name}
               </span>
               <span className='hidden text-[11px] uppercase tracking-[0.24em] text-muted-text sm:block'>
-                software dojo
+                field guide
               </span>
             </span>
           </Link>
