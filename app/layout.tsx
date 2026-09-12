@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import Script from 'next/script';
+import { Analytics } from '@vercel/analytics/next';
 import { inter, sora, geistSans, geistMono } from './fonts';
 import { personalSite, siteMetadata } from '@/lib/config/personal-site';
 import { themeInitScript } from '@/lib/theme/theme-script';
@@ -47,6 +48,7 @@ export default function RootLayout({
         </Script>
         {children}
         <ThemeToggle />
+        <Analytics />
       </body>
     </html>
   );
