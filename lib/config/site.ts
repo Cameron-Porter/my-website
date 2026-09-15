@@ -4,6 +4,8 @@ import { personalSite, primaryNavLinks, siteMetadata } from './personal-site';
 export const APP_URL =
   process.env.NEXT_PUBLIC_APP_URL ?? 'https://app.cameron-porter.com';
 
+export const GTM_ID = 'GTM-K728V3Q4';
+
 export const navLinks: NavLink[] = primaryNavLinks;
 
 export const footerProductLinks: NavLink[] = [
