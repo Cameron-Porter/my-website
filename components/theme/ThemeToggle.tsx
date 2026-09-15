@@ -51,13 +51,14 @@ export default function ThemeToggle() {
         className='pulse-glow pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgb(var(--blaze-rgb)/0.8),rgb(var(--blaze-rgb)/0.5)_40%,transparent_65%)] opacity-0 blur-sm transition-opacity duration-500 dark:opacity-100'
       />
       {/* Both marks render; the theme class picks one, so the toggle is
-          correct on first paint instead of flashing after hydration. */}
-      <Sun
+          correct on first paint instead of flashing after hydration. The
+          icon shows the theme a click switches to, matching the label. */}
+      <Moon
         aria-hidden='true'
         size={22}
         className='relative z-10 text-accent-blaze transition-colors duration-300 dark:hidden'
       />
-      <Moon
+      <Sun
         aria-hidden='true'
         size={22}
         className='relative z-10 hidden text-accent-blaze drop-shadow-[0_0_12px_rgb(var(--blaze-rgb)/0.9)] transition-colors duration-300 dark:block'
