@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { ExternalLink } from 'lucide-react';
 import { personalSite, resumeSections } from '@/lib/config/personal-site';
+import ContactLink from '@/components/analytics/ContactLink';
 
 export const metadata: Metadata = {
   title: 'Resume',
@@ -26,9 +27,9 @@ export default function ResumePage() {
           Backend Software Developer II working primarily in TypeScript and Go. Coast Guard veteran. Christian. Builder of practical systems, clear APIs, training software, and AI-assisted engineering workflows.
         </p>
         <div className='mt-8 flex flex-wrap gap-3'>
-          <a className='inline-flex h-11 items-center gap-2 cut-sm bg-accent-blaze px-5 text-sm font-extrabold uppercase tracking-[0.14em] text-on-accent transition hover:bg-accent-blaze/90' href={personalSite.links.linkedin}>
+          <ContactLink method='linkedin' location='resume_page' className='inline-flex h-11 items-center gap-2 cut-sm bg-accent-blaze px-5 text-sm font-extrabold uppercase tracking-[0.14em] text-on-accent transition hover:bg-accent-blaze/90' href={personalSite.links.linkedin}>
             LinkedIn <ExternalLink size={15} />
-          </a>
+          </ContactLink>
           <a className='inline-flex h-11 items-center gap-2 cut-sm border border-accent-blaze/50 px-5 text-sm font-bold uppercase tracking-[0.14em] text-primary-text transition hover:bg-accent-blaze/10' href={personalSite.links.resumeDownload} download>
             Download resume <ExternalLink size={15} />
           </a>

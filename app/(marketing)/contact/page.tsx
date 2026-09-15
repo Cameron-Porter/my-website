@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { ExternalLink, Mail } from 'lucide-react';
 import { personalSite } from '@/lib/config/personal-site';
+import ContactLink from '@/components/analytics/ContactLink';
 
 export const metadata: Metadata = {
   title: 'Contact',
@@ -18,12 +19,12 @@ export default function ContactPage() {
           The fastest way to reach me is email or LinkedIn. I’m interested in backend systems, product engineering, AI-assisted workflows, and practical tools that help people.
         </p>
         <div className='mt-8 grid max-w-2xl gap-3 sm:grid-cols-2'>
-          <a className='inline-flex h-12 items-center justify-center gap-2 cut-sm bg-accent-blaze px-5 text-sm font-extrabold uppercase tracking-[0.14em] text-on-accent transition hover:bg-accent-blaze/90' href={personalSite.links.email}>
+          <ContactLink method='email' location='contact_page' className='inline-flex h-12 items-center justify-center gap-2 cut-sm bg-accent-blaze px-5 text-sm font-extrabold uppercase tracking-[0.14em] text-on-accent transition hover:bg-accent-blaze/90' href={personalSite.links.email}>
             <Mail size={16} /> Email Cameron
-          </a>
-          <a className='inline-flex h-12 items-center justify-center gap-2 cut-sm border border-[var(--hairline)] px-5 text-sm font-semibold text-primary-text transition hover:bg-black/10 dark:hover:bg-white/10' href={personalSite.links.linkedin}>
+          </ContactLink>
+          <ContactLink method='linkedin' location='contact_page' className='inline-flex h-12 items-center justify-center gap-2 cut-sm border border-[var(--hairline)] px-5 text-sm font-semibold text-primary-text transition hover:bg-black/10 dark:hover:bg-white/10' href={personalSite.links.linkedin}>
             LinkedIn <ExternalLink size={15} />
-          </a>
+          </ContactLink>
         </div>
       </div>
     </section>

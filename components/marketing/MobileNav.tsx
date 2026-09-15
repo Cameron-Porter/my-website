@@ -7,6 +7,7 @@ import { X } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { navLinks } from '@/lib/config/site';
 import { personalSite } from '@/lib/config/personal-site';
+import ContactLink from '@/components/analytics/ContactLink';
 import { cn } from '@/lib/utils';
 import type { MobileNavProps } from '@/lib/types/components';
 
@@ -89,13 +90,15 @@ export default function MobileNav({ isOpen, onClose }: MobileNavProps) {
             </ul>
 
             <div className='space-y-3 p-4'>
-              <a
+              <ContactLink
+                method='linkedin'
+                location='mobile_nav'
                 href={personalSite.links.linkedin}
                 onClick={onClose}
                 className='flex h-11 w-full items-center justify-center rounded-full border border-black/10 dark:border-white/10 text-sm font-semibold text-primary-text transition-colors hover:bg-black/10 dark:hover:bg-white/10'
               >
                 LinkedIn
-              </a>
+              </ContactLink>
               <Link
                 href={personalSite.links.resume}
                 onClick={onClose}

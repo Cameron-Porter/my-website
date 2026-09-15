@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import ContactLink from '@/components/analytics/ContactLink';
 import { personalSite, projects } from '@/lib/config/personal-site';
 import { footerProductLinks, legalLinks, siteConfig } from '@/lib/config/site';
 import type { FooterProps } from '@/lib/types/components';
@@ -26,9 +27,9 @@ export default function Footer({ className }: FooterProps) {
             To enjoy what you do is a daily blessing.
           </p>
           <div className='flex flex-wrap gap-3'>
-            <a className='cut-sm border border-[var(--hairline)] px-4 py-2 text-sm font-bold uppercase tracking-[0.12em] text-primary-text transition hover:border-accent-blaze/50' href={personalSite.links.linkedin}>
+            <ContactLink method='linkedin' location='footer' className='cut-sm border border-[var(--hairline)] px-4 py-2 text-sm font-bold uppercase tracking-[0.12em] text-primary-text transition hover:border-accent-blaze/50' href={personalSite.links.linkedin}>
               LinkedIn
-            </a>
+            </ContactLink>
             <Link className='cut-sm bg-accent-blaze px-4 py-2 text-sm font-extrabold uppercase tracking-[0.12em] text-on-accent transition hover:brightness-110' href='/resume'>
               Resume
             </Link>

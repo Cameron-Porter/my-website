@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { ArrowRight, Code2, Gauge, Handshake, ShieldCheck, Sparkles, Terminal } from 'lucide-react';
 import { personalSite, projects, resumeSections } from '@/lib/config/personal-site';
+import ContactLink from '@/components/analytics/ContactLink';
 
 const ridingCode = [
   { title: 'Service before software', body: 'The best systems help real people do meaningful work with less friction.', icon: Handshake },
@@ -46,12 +47,14 @@ export default function HomePage() {
             >
               Read the resume
             </Link>
-            <a
+            <ContactLink
+              method='linkedin'
+              location='home_hero'
               className='inline-flex h-12 items-center justify-center px-2 text-sm font-bold uppercase tracking-[0.14em] text-muted-text underline-offset-8 transition hover:text-accent-alpine hover:underline'
               href={personalSite.links.linkedin}
             >
               LinkedIn
-            </a>
+            </ContactLink>
           </div>
         </div>
 
