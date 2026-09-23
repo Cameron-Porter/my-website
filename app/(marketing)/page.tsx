@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import ProjectCard from '@/components/marketing/ProjectCard';
 import { ArrowRight, Code2, Gauge, Handshake, ShieldCheck, Sparkles, Terminal } from 'lucide-react';
 import { personalSite, projects, resumeSections } from '@/lib/config/personal-site';
 import ContactLink from '@/components/analytics/ContactLink';
@@ -39,8 +40,9 @@ export default function HomePage() {
               className='cut-sm inline-flex h-12 items-center justify-center gap-2 bg-accent-blaze px-7 text-sm font-extrabold uppercase tracking-[0.14em] text-on-accent shadow-[var(--glow-blaze)] transition hover:brightness-110'
               href='/projects'
             >
-              Drop in <ArrowRight size={16} />
+              View engineering work <ArrowRight size={16} aria-hidden='true' />
             </Link>
+            <Link href='/contact' className='cut-sm inline-flex min-h-12 items-center justify-center border border-accent-alpine/50 px-5 text-sm font-bold text-accent-alpine transition hover:underline'>Contact Cameron</Link>
             <Link
               className='cut-sm inline-flex h-12 items-center justify-center border border-[var(--hairline)] bg-primary-text/[0.04] px-7 text-sm font-bold uppercase tracking-[0.14em] text-primary-text transition hover:border-accent-blaze/50'
               href='/resume'
@@ -84,6 +86,25 @@ export default function HomePage() {
         </div>
       </section>
 
+      <section className='mx-auto max-w-[1180px] px-5 py-16 sm:px-6' aria-labelledby='projects-heading'>
+        <div className='flex flex-col gap-5 md:flex-row md:items-end md:justify-between'>
+          <div>
+            <p className='text-sm font-extrabold uppercase tracking-[0.32em] text-accent-blaze'>Selected work</p>
+            <div className='rule-speed mt-4 w-20' aria-hidden='true' />
+            <h2 id='projects-heading' className='mt-6 font-heading text-3xl font-extrabold uppercase leading-[1.02] tracking-[-0.02em] text-primary-text sm:text-4xl'>
+              Projects with a point of view.
+            </h2>
+          </div>
+          <Link className='inline-flex items-center gap-2 text-sm font-extrabold uppercase tracking-[0.14em] text-accent-alpine underline-offset-8 hover:underline' href='/projects'>
+            View all <ArrowRight size={16} />
+          </Link>
+        </div>
+
+        <div className='mt-10 grid gap-5 lg:grid-cols-3'>
+          {projects.map((project) => <ProjectCard key={project.slug} project={project} headingLevel={3} />)}
+        </div>
+      </section>
+
       <section className='mx-auto max-w-[1180px] px-5 py-16 sm:px-6 md:py-20' aria-labelledby='riding-code-heading'>
         <p className='text-sm font-extrabold uppercase tracking-[0.32em] text-accent-blaze'>Rules of the line</p>
         <div className='rule-speed mt-4 w-20' aria-hidden='true' />
@@ -100,44 +121,6 @@ export default function HomePage() {
               <h3 className='mt-5 text-base font-extrabold uppercase tracking-[0.06em] text-primary-text'>{title}</h3>
               <p className='mt-3 text-sm leading-6 text-muted-text'>{body}</p>
             </article>
-          ))}
-        </div>
-      </section>
-
-      <section className='mx-auto max-w-[1180px] px-5 py-16 sm:px-6' aria-labelledby='projects-heading'>
-        <div className='flex flex-col gap-5 md:flex-row md:items-end md:justify-between'>
-          <div>
-            <p className='text-sm font-extrabold uppercase tracking-[0.32em] text-accent-blaze'>Selected work</p>
-            <div className='rule-speed mt-4 w-20' aria-hidden='true' />
-            <h2 id='projects-heading' className='mt-6 font-heading text-3xl font-extrabold uppercase leading-[1.02] tracking-[-0.02em] text-primary-text sm:text-4xl'>
-              Projects with a point of view.
-            </h2>
-          </div>
-          <Link className='inline-flex items-center gap-2 text-sm font-extrabold uppercase tracking-[0.14em] text-accent-alpine underline-offset-8 hover:underline' href='/projects'>
-            View all <ArrowRight size={16} />
-          </Link>
-        </div>
-
-        <div className='mt-10 grid gap-5 lg:grid-cols-3'>
-          {projects.map((project) => (
-            <Link
-              key={project.slug}
-              href={project.href}
-              className='cut edge group border border-[var(--hairline)] bg-secondary-surface/70 p-6 pl-7 transition hover:-translate-y-1 hover:bg-secondary-surface'
-            >
-              <span className='inline-block border border-accent-blaze/40 px-2.5 py-1 text-[0.65rem] font-extrabold uppercase tracking-[0.24em] text-accent-blaze'>
-                {project.status}
-              </span>
-              <h3 className='mt-5 font-heading text-2xl font-extrabold uppercase tracking-[-0.01em] text-primary-text'>{project.title}</h3>
-              <p className='mt-3 text-sm leading-6 text-muted-text'>{project.summary}</p>
-              <div className='mt-5 flex flex-wrap gap-2'>
-                {project.stack.slice(0, 4).map((item) => (
-                  <span key={item} className='border border-[var(--hairline)] px-2.5 py-1 text-[0.7rem] font-semibold uppercase tracking-[0.1em] text-muted-text'>
-                    {item}
-                  </span>
-                ))}
-              </div>
-            </Link>
           ))}
         </div>
       </section>

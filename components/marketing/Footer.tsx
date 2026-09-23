@@ -27,6 +27,9 @@ export default function Footer({ className }: FooterProps) {
             To enjoy what you do is a daily blessing.
           </p>
           <div className='flex flex-wrap gap-3'>
+            <ContactLink method='email' location='footer' className='cut-sm border border-[var(--hairline)] px-4 py-2 text-sm font-bold uppercase tracking-[0.12em] text-primary-text transition hover:border-accent-blaze/50' href={personalSite.links.email}>
+              Email Cameron
+            </ContactLink>
             <ContactLink method='linkedin' location='footer' className='cut-sm border border-[var(--hairline)] px-4 py-2 text-sm font-bold uppercase tracking-[0.12em] text-primary-text transition hover:border-accent-blaze/50' href={personalSite.links.linkedin}>
               LinkedIn
             </ContactLink>

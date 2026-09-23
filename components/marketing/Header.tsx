@@ -6,7 +6,7 @@ import { usePathname } from 'next/navigation';
 import Image from 'next/image';
 import { Menu } from 'lucide-react';
 import { navLinks, siteConfig } from '@/lib/config/site';
-import { personalSite } from '@/lib/config/personal-site';
+
 import { cn } from '@/lib/utils';
 import MobileNav from '@/components/marketing/MobileNav';
 import type { HeaderProps } from '@/lib/types/components';
@@ -51,7 +51,7 @@ export default function Header({ className }: HeaderProps) {
             </span>
           </Link>
 
-          <ul className='hidden min-w-0 items-center md:flex'>
+          <ul className='hidden min-w-0 items-center lg:flex'>
             {navLinks.map((link) => {
               const isActive = pathname === link.href;
               return (
@@ -74,18 +74,18 @@ export default function Header({ className }: HeaderProps) {
           </ul>
 
           <div className='flex items-center gap-3'>
-            <a
-              href={personalSite.links.resume}
-              className='cut-sm hidden shrink-0 items-center whitespace-nowrap bg-accent-blaze px-4 py-2.5 text-[0.8rem] font-extrabold uppercase tracking-[0.1em] text-on-accent shadow-[var(--glow-blaze)] transition-all duration-200 hover:brightness-110 md:inline-flex lg:px-5 lg:text-sm lg:tracking-[0.14em]'
+            <Link
+              href='/recruiters'
+              className='cut-sm hidden shrink-0 items-center whitespace-nowrap bg-accent-blaze px-4 py-2.5 text-[0.8rem] font-extrabold uppercase tracking-[0.1em] text-on-accent shadow-[var(--glow-blaze)] transition-all duration-200 hover:brightness-110 lg:inline-flex lg:px-5 lg:text-sm lg:tracking-[0.14em]'
             >
-              Resume
-            </a>
+              For recruiters
+            </Link>
 
             <button
               type='button'
               onClick={openMobileNav}
               aria-label='Open navigation menu'
-              className='flex h-11 w-11 items-center justify-center text-primary-text transition-colors hover:text-accent-blaze md:hidden'
+              className='flex h-11 w-11 items-center justify-center text-primary-text transition-colors hover:text-accent-blaze lg:hidden'
             >
               <Menu size={24} />
             </button>

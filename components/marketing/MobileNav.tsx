@@ -34,7 +34,7 @@ export default function MobileNav({ isOpen, onClose }: MobileNavProps) {
       {isOpen && (
         <>
           <motion.div
-            className='fixed inset-0 z-40 bg-black/60 backdrop-blur-sm md:hidden'
+            className='fixed inset-0 z-40 bg-black/60 backdrop-blur-sm lg:hidden'
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
@@ -47,7 +47,7 @@ export default function MobileNav({ isOpen, onClose }: MobileNavProps) {
             role='dialog'
             aria-modal='true'
             aria-label='Mobile navigation'
-            className='fixed top-0 right-0 z-50 flex h-full w-[300px] max-w-[82vw] flex-col border-l border-black/10 dark:border-white/10 bg-primary-bg md:hidden'
+            className='fixed top-0 right-0 z-50 flex h-full w-[300px] max-w-[82vw] flex-col border-l border-black/10 dark:border-white/10 bg-primary-bg lg:hidden'
             initial={{ x: '100%' }}
             animate={{ x: 0 }}
             exit={{ x: '100%' }}
@@ -90,6 +90,7 @@ export default function MobileNav({ isOpen, onClose }: MobileNavProps) {
             </ul>
 
             <div className='space-y-3 p-4'>
+              <Link href='/recruiters' onClick={onClose} className='cut-sm flex min-h-11 items-center justify-center border border-accent-blaze/50 px-4 text-sm font-bold text-accent-blaze'>For recruiters</Link>
               <ContactLink
                 method='linkedin'
                 location='mobile_nav'
