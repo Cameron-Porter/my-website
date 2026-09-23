@@ -11,6 +11,8 @@ export const navLinks: NavLink[] = primaryNavLinks;
 export const footerProductLinks: NavLink[] = [
   { label: 'Resume', href: '/resume' },
   { label: 'Projects', href: '/projects' },
+  { label: 'How I Build', href: '/how-i-build' },
+  { label: 'For recruiters', href: '/recruiters' },
   { label: 'Garage', href: '/lab' },
 ];
 

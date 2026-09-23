@@ -18,16 +18,15 @@ describe('personal site content contract', () => {
   });
 
   it('publishes LinkedIn and resume destinations', () => {
-    expect(personalSite.links.linkedin).toBe('https://www.linkedin.com/in/cameron-r-porter');
+    expect(personalSite.links.linkedin).toBe('https://www.linkedin.com/in/cameron-r-porter/');
     expect(personalSite.links.resume).toBe('/resume');
   });
 
-  it('uses personal website navigation with projects and garage', () => {
+  it('uses focused work and hiring navigation', () => {
     expect(primaryNavLinks.map((link) => [link.label, link.href])).toEqual([
-      ['Home', '/'],
+      ['Work', '/projects'],
+      ['How I Build', '/how-i-build'],
       ['Resume', '/resume'],
-      ['Projects', '/projects'],
-      ['Garage', '/lab'],
       ['Contact', '/contact'],
     ]);
   });

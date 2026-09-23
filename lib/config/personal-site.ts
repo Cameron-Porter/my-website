@@ -5,6 +5,9 @@ export type PersonalProject = {
   title: string;
   summary: string;
   href: string;
+  actionLabel: string;
+  featured?: boolean;
+  appHref?: string;
   stack: string[];
   status: string;
   signal: string;
@@ -24,10 +27,9 @@ export type ExperienceItem = {
 };
 
 export const primaryNavLinks: NavLink[] = [
-  { label: 'Home', href: '/' },
+  { label: 'Work', href: '/projects' },
+  { label: 'How I Build', href: '/how-i-build' },
   { label: 'Resume', href: '/resume' },
-  { label: 'Projects', href: '/projects' },
-  { label: 'Garage', href: '/lab' },
   { label: 'Contact', href: '/contact' },
 ];
 
@@ -39,13 +41,13 @@ export const personalSite = {
     'Personal website for Cameron Porter: Christian, Coast Guard veteran, backend developer, and builder of practical software tools.',
   hero: {
     kicker: 'Christian · Veteran · Family Man · Backend Dev',
-    headline: 'Software that holds up at speed.',
+    headline: 'Backend engineering for payments & event-driven systems.',
     body:
-      'I work primarily in TypeScript and Go, care about systems that serve people well, and like turning messy product ideas into dependable tools. Payments at scale, training software, AI workflows — the fun stuff is where the stakes are real.',
+      'I build payment integrations and event-driven services in TypeScript, Go, and AWS. My work connects enterprise systems, makes retries and idempotency explicit, and turns complex product requirements into maintainable software.',
   },
   links: {
     email: 'mailto:info@cameron-porter.com',
-    linkedin: 'https://www.linkedin.com/in/cameron-r-porter',
+    linkedin: 'https://www.linkedin.com/in/cameron-r-porter/',
     resume: '/resume',
     resumeDownload: '/resume.pdf',
     grit: 'https://app.cameron-porter.com',
@@ -58,11 +60,14 @@ export const projects: PersonalProject[] = [
     slug: 'grit',
     title: 'G.R.I.T.',
     summary:
-      'A hypertrophy training product that combines deterministic programming rules, workout logging, Supabase persistence, and carefully bounded AI-assisted program drafting.',
+      'A training PWA that keeps prescriptions deterministic, validates AI exercise selections, and saves complete programs through a single database transaction.',
     href: '/projects/grit',
-    stack: ['Next.js', 'TypeScript', 'Supabase', 'React Native', 'Vitest'],
+    actionLabel: 'Read GRIT case study',
+    featured: true,
+    appHref: personalSite.links.grit,
+    stack: ['Next.js', 'TypeScript', 'Supabase', 'Vitest'],
     status: 'Active product build',
-    signal: 'Fitness tech, rule engines, PWA/native parity, AI boundaries',
+    signal: 'Fitness tech, deterministic rules, PWA, AI boundaries',
   },
   {
     slug: 'hermes-workflow',
@@ -70,6 +75,7 @@ export const projects: PersonalProject[] = [
     summary:
       'A personal operating system for AI-assisted engineering: durable skills, repo backups, task verification, and agent orchestration patterns.',
     href: '/lab',
+    actionLabel: 'Explore the workflow lab',
     stack: ['AI agents', 'Git', 'Obsidian', 'Automation'],
     status: 'Ongoing practice',
     signal: 'Human-in-the-loop AI, verification, knowledge management',
@@ -80,6 +86,7 @@ export const projects: PersonalProject[] = [
     summary:
       'A personal resume and project record built on cut geometry, a high-vis blaze accent, and copy that gets to the point.',
     href: '/',
+    actionLabel: 'View this website',
     stack: ['Next.js', 'Tailwind CSS', 'TypeScript', 'Vitest'],
     status: 'Living portfolio',
     signal: 'Design systems, content strategy, frontend craft',
