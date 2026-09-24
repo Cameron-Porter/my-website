@@ -48,6 +48,26 @@ export default function GritProjectPage() {
         <Metric label='Engineering theme' value='Deterministic core + validated AI' />
       </section>
 
+      <section className='cut border border-[var(--hairline)] bg-secondary-surface/70 p-4 md:p-6' aria-labelledby='product-reel-heading'>
+        <div className='flex flex-col gap-3 pb-4 md:flex-row md:items-end md:justify-between'>
+          <div>
+            <p className='text-sm font-extrabold uppercase tracking-[0.32em] text-accent-blaze'>Product reel</p>
+            <h2 id='product-reel-heading' className='mt-3 font-heading text-2xl font-extrabold uppercase text-primary-text'>GRIT in motion</h2>
+          </div>
+          <p className='max-w-xl text-sm leading-6 text-muted-text'>A 21-second look at the native-feeling flow: build a program, constrain AI to useful choices, log the work, and watch progress compound.</p>
+        </div>
+        <video
+          className='aspect-video w-full border border-[var(--hairline)] bg-black object-cover'
+          controls
+          playsInline
+          preload='metadata'
+          poster='/grit/grit-product-reel.jpg'
+        >
+          <source src='/grit/grit-product-reel.mp4' type='video/mp4' />
+          Your browser does not support embedded video. <a className='font-bold text-accent-alpine underline' href='/grit/grit-product-reel.mp4'>Open the GRIT product reel</a>.
+        </video>
+      </section>
+
       <section className='cut border border-[var(--hairline)] bg-black/[0.02] dark:bg-white/[0.04] p-7 md:p-10'>
         <p className='text-sm font-extrabold uppercase tracking-[0.32em] text-accent-blaze'>The problem</p>
         <h2 className='mt-3 font-heading text-3xl font-extrabold uppercase leading-[1.02] tracking-[-0.02em] text-primary-text'>Useful guidance without an opaque prescription.</h2>
